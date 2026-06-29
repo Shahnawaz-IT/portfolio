@@ -7,7 +7,11 @@
 <meta name="description" content="Portfolio of Md Shahnawaz — IT Engineer, System Administrator & IT Support Specialist with 5+ years experience. M.Sc. IT, CDAC certified, based in Gaya, Bihar, India.">
 <meta name="keywords" content="Md Shahnawaz, IT Engineer, System Administrator, IT Support, CDAC, Network Management, Gaya Bihar">
 <meta property="og:title" content="Md Shahnawaz — IT Engineer Portfolio">
-<meta property="og:description" content="5+ years IT professional — System Admin, Network Management, IT Support Specialist">
+<meta property="og:description" content="5+ Years IT Professional — System Administrator, IT Engineer, IT Support Specialist">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Md Shahnawaz — IT Engineer Portfolio">
+<meta name="theme-color" content="#00d4ff">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -40,12 +44,12 @@
     color: var(--text);
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    cursor: none;
+    cursor: default;
   }
 
   /* Custom cursor */
-  .cursor { position: fixed; width: 10px; height: 10px; background: var(--cyan); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: transform 0.1s; mix-blend-mode: screen; }
-  .cursor-ring { position: fixed; width: 36px; height: 36px; border: 1px solid var(--cyan); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: all 0.15s ease; opacity: 0.6; }
+  .cursor { display: none; }
+  .cursor-ring { display: none; }
 
   /* Canvas */
   #canvas3d { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
@@ -167,7 +171,7 @@
   @keyframes loadBar { from{width:0} }
 
   /* SECTION BASE */
-  section { padding: 5rem 3rem; max-width: 1200px; margin: 0 auto; position: relative; }
+  section { padding: 5rem 3rem; max-width: 1200px; margin: 0 auto; position: relative; width: 100%; }
   .section-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
   .section-tag::before { content: '//'; color: var(--muted); }
   .section-title { font-family: 'Rajdhani', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,212,255,0.08); }
@@ -305,11 +309,16 @@
   @media(max-width:768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .hero-inner { grid-template-columns: 1fr; }
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
     .hero-card { display: flex; justify-content: center; margin-top: 2rem; }
-    .hero-card-inner { width: 300px; height: auto; min-height: 380px; padding-bottom: 1.5rem; }
+    .hero-card-inner { width: min(300px, 90vw); height: auto; min-height: 360px; padding-bottom: 1.5rem; animation: none; transform: none !important; }
     section { padding: 3rem 1.5rem; }
     .contact-grid { grid-template-columns: 1fr; }
+    .hero-btns { justify-content: center; }
+    .hero-stats { justify-content: center; }
+    .hero-desc { margin-left: auto; margin-right: auto; }
+    .hero-tag { justify-content: center; }
+    .personal-grid { grid-template-columns: 1fr; }
   }
 
   /* GALLERY */
@@ -361,8 +370,13 @@
   #lbCount { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 0.3rem; }
   .lb-close { position: absolute; top: -2rem; right: 0; background: none; border: 1px solid var(--border); color: var(--cyan); font-size: 1rem; cursor: pointer; padding: 0.2rem 0.6rem; }
   .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,212,255,0.1); border: 1px solid var(--border); color: var(--cyan); font-size: 2rem; cursor: pointer; padding: 0.2rem 0.6rem; transition: background 0.2s; z-index: 10; }
-  .lb-prev { left: -3.5rem; }
-  .lb-next { right: -3.5rem; }
+  .lb-prev { left: -3rem; }
+  .lb-next { right: -3rem; }
+  @media(max-width:600px){
+    .lb-prev { left: 0.3rem; top: auto; bottom: 0.5rem; transform: none; }
+    .lb-next { right: 0.3rem; top: auto; bottom: 0.5rem; transform: none; }
+    .lb-inner img { max-width: 92vw; max-height: 60vh; }
+  }
   .lb-prev:hover, .lb-next:hover { background: rgba(0,212,255,0.2); }
 
 
@@ -405,7 +419,7 @@
     width: 100%;
     max-width: 600px;
     border: 1px solid rgba(0,212,255,0.2);
-    cursor: zoom-in;
+    cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     filter: brightness(0.97);
@@ -427,7 +441,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    cursor: zoom-out;
+    cursor: pointer;
   }
   #expLetterViewer.open { display: flex; }
   #expLetterViewer img {
@@ -446,94 +460,7 @@
   }
   @media(max-width:768px){
     .exp-letter-header { grid-template-columns: 1fr; }
-  }
-
-
-  /* ABOUT ME */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .about-para {
-    color: var(--text);
-    font-size: 0.95rem;
-    line-height: 1.85;
-    margin-bottom: 1.2rem;
-  }
-  .hl { color: var(--cyan); font-weight: 600; }
-  .about-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1.5rem;
-  }
-  .atag {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--cyan2);
-    border: 1px solid rgba(0,255,204,0.2);
-    background: rgba(0,255,204,0.04);
-    padding: 0.3rem 0.8rem;
-    letter-spacing: 0.04em;
-    transition: all 0.2s;
-  }
-  .atag:hover { background: rgba(0,255,204,0.1); border-color: var(--cyan2); }
-  .about-side { display: flex; flex-direction: column; gap: 1rem; }
-  .about-stat-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 1rem 1.2rem;
-    transition: border-color 0.3s;
-  }
-  .about-stat-card:hover { border-color: rgba(0,212,255,0.4); }
-  .asc-num { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; color: var(--cyan); line-height: 1; }
-  .asc-label { font-size: 0.72rem; color: var(--muted); margin: 0.2rem 0 0.6rem; }
-  .asc-bar { height: 2px; background: rgba(0,212,255,0.1); border-radius: 2px; }
-  .asc-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); border-radius: 2px; animation: loadBar 2s ease forwards; }
-  .about-values {
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 1rem 1.2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .av-item { display: flex; align-items: center; gap: 0.7rem; font-size: 0.82rem; color: var(--text); }
-  .av-icon { font-size: 1rem; }
-  @media(max-width:768px){
-    .about-grid { grid-template-columns: 1fr; }
-  }
-
-
-  /* ABOUT ME */
-  .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: start; }
-  .about-para { color: var(--text); line-height: 1.9; font-size: 0.92rem; margin-bottom: 1.2rem; }
-  .hl { color: var(--cyan); font-weight: 600; }
-  .about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
-  .ah-item { display: flex; gap: 0.8rem; align-items: flex-start; background: var(--card); border: 1px solid var(--border); padding: 0.9rem; transition: border-color 0.3s; }
-  .ah-item:hover { border-color: var(--cyan); }
-  .ah-icon { font-size: 1.4rem; flex-shrink: 0; }
-  .ah-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; color: var(--white); font-size: 0.9rem; }
-  .ah-sub { font-size: 0.72rem; color: var(--muted); margin-top: 0.1rem; line-height: 1.4; }
-  /* Status card */
-  .about-status-card { background: var(--card); border: 1px solid var(--border); margin-bottom: 1.2rem; overflow: hidden; }
-  .asc-header { display: flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1.2rem; border-bottom: 1px solid var(--border); background: rgba(0,212,255,0.04); }
-  .asc-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; box-shadow: 0 0 6px var(--green); animation: blink 2s infinite; }
-  .asc-label { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.12em; }
-  .asc-body { padding: 0.8rem 1.2rem; display: flex; flex-direction: column; gap: 0.55rem; }
-  .asc-row { display: flex; gap: 0.8rem; align-items: flex-start; }
-  .asc-key { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.1em; min-width: 75px; padding-top: 0.1rem; }
-  .asc-val { font-size: 0.82rem; color: var(--text); }
-  /* Quick skills */
-  .about-skills-quick { background: var(--card); border: 1px solid var(--border); padding: 1.2rem; }
-  .asq-title { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.12em; margin-bottom: 0.8rem; }
-  .asq-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .asq-tags span { font-family: 'Share Tech Mono', monospace; font-size: 0.62rem; color: var(--cyan2); border: 1px solid rgba(0,255,204,0.2); padding: 0.2rem 0.6rem; background: rgba(0,255,204,0.04); transition: all 0.2s; cursor: default; }
-  .asq-tags span:hover { border-color: var(--cyan2); background: rgba(0,255,204,0.1); }
-  @media(max-width:768px){
-    .about-grid { grid-template-columns: 1fr; }
+    .exp-letter-header, .exp-letter-img-wrap { padding: 1rem; }
     .about-highlights { grid-template-columns: 1fr; }
   }
 
@@ -603,6 +530,19 @@
   .reveal { transition: opacity 0.8s ease, transform 0.8s ease; }
 
 
+  /* PRINT STYLES */
+  @media print {
+    nav, .float-wa, #adminBtn, #scrollTop, #lightbox, #expLetterViewer,
+    #adminOverlay, #adminLogin, #changePwModal, .grid-bg, .scanline,
+    #canvas3d, .page-glow-top { display: none !important; }
+    body { background: white; color: #000; }
+    .hero { min-height: auto; page-break-after: always; }
+    section { padding: 1.5rem; border: none; }
+    .card-name, .section-title, .hero-name { color: #000 !important; }
+    .skill-card, .cert-card, .edu-card { border: 1px solid #ccc; }
+    a { color: #0066ff; }
+  }
+
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
   .hamburger span { display: block; width: 22px; height: 2px; background: var(--cyan); transition: all 0.3s; }
   .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
@@ -613,16 +553,17 @@
     .nav-links {
       display: none; position: fixed; top: 56px; left: 0; right: 0;
       background: rgba(2,11,24,0.98); border-bottom: 1px solid var(--border);
-      flex-direction: column; padding: 1rem 2rem; gap: 1rem; z-index: 99;
+      flex-direction: column; padding: 1.2rem 2rem; gap: 0.8rem; z-index: 99;
+      overflow-y: auto; max-height: calc(100vh - 56px);
     }
     .nav-links.open { display: flex; }
-    .nav-links a { font-size: 1rem; }
+    .nav-links a { font-size: 1rem; padding: 0.3rem 0; }
     .nav-badge { font-size: 0.55rem; padding: 0.15rem 0.4rem; }
     .hero-stats { flex-wrap: wrap; gap: 1rem; }
   }
 
   .float-wa {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 200;
+    position: fixed; bottom: 2rem; left: 2rem; z-index: 200;
     width: 52px; height: 52px; background: #25d366;
     border-radius: 50%; display: flex; align-items: center; justify-content: center;
     box-shadow: 0 4px 20px rgba(37,211,102,0.4);
@@ -633,6 +574,186 @@
   @keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 30px rgba(37,211,102,0.7)} }
 
   .cursor-blink { animation: blink 1s infinite; color: var(--cyan); }
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTop {
+  position: fixed; bottom: 5rem; right: 2rem; z-index: 999;
+  width: 38px; height: 38px; background: rgba(2,11,24,0.9);
+  border: 1px solid rgba(0,212,255,0.35); color: var(--cyan);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0; transition: all 0.3s; border-radius: 2px;
+  font-size: 1rem; backdrop-filter: blur(8px); pointer-events: none;
+}
+#scrollTop.visible { opacity: 0.8; pointer-events: auto; }
+#scrollTop:hover { opacity: 1; border-color: var(--cyan); transform: translateY(-2px); background: rgba(0,20,40,0.95); }
+@media(max-width:600px){ #scrollTop { bottom: 5.5rem; right: 1rem; width: 34px; height: 34px; font-size: 0.85rem; } }
+
+/* ===== ADMIN PANEL STYLES ===== */
+#adminBtn {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 9999;
+  background: rgba(2,11,24,0.88);
+  color: #7bbcd5;
+  border: 1px solid rgba(0,212,255,0.45);
+  padding: 0.5rem 1.1rem;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer;
+  opacity: 0.85; transition: all 0.3s; border-radius: 3px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.7), 0 0 0 1px rgba(0,212,255,0.08);
+}
+#adminBtn:hover {
+  opacity: 1;
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: rgba(0,20,40,0.95);
+  box-shadow: 0 0 18px rgba(0,212,255,0.25), 0 2px 14px rgba(0,0,0,0.7);
+  transform: translateY(-2px);
+}
+
+/* Login Screen */
+#adminLogin {
+  display: none; position: fixed; inset: 0; z-index: 99999;
+  background: rgba(2,11,24,0.97); backdrop-filter: blur(20px);
+  align-items: center; justify-content: center;
+}
+#adminLogin.open { display: flex; }
+.login-box {
+  width: 360px; background: rgba(4,18,37,0.95);
+  border: 1px solid rgba(0,212,255,0.25); border-radius: 6px; padding: 2.5rem;
+  position: relative;
+}
+.login-box::before {
+  content: ''; position: absolute; top: -1px; left: 20%; right: 20%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+.login-logo { font-family: 'Share Tech Mono', monospace; color: var(--cyan); font-size: 0.7rem; letter-spacing: 0.25em; text-align: center; margin-bottom: 0.3rem; }
+.login-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--white); text-align: center; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.login-sub { font-size: 0.72rem; color: var(--muted); text-align: center; margin-bottom: 2rem; font-family: 'Share Tech Mono', monospace; }
+.login-field { margin-bottom: 1rem; }
+.login-field label { display: block; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.15em; margin-bottom: 0.4rem; }
+.login-field input {
+  width: 100%; background: rgba(0,0,0,0.5); border: 1px solid var(--border);
+  color: var(--white); padding: 0.7rem 1rem; font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem; border-radius: 2px; outline: none; transition: border 0.2s; letter-spacing: 0.1em;
+}
+.login-field input:focus { border-color: var(--cyan); box-shadow: 0 0 10px rgba(0,212,255,0.1); }
+.login-btn {
+  width: 100%; background: var(--cyan); color: var(--bg); border: none;
+  padding: 0.85rem; font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
+  clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition: all 0.3s;
+  margin-top: 0.5rem;
+}
+.login-btn:hover:not(:disabled) { background: var(--cyan2); }
+.login-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.login-error {
+  background: rgba(255,60,60,0.1); border: 1px solid rgba(255,60,60,0.3);
+  color: #ff6b6b; padding: 0.6rem 1rem; border-radius: 2px; font-size: 0.75rem;
+  font-family: 'Share Tech Mono', monospace; margin-top: 0.8rem; text-align: center;
+  display: none;
+}
+.login-error.show { display: block; }
+.login-attempts { text-align: center; font-size: 0.65rem; color: var(--muted); font-family: 'Share Tech Mono', monospace; margin-top: 0.8rem; }
+.login-locked {
+  background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3);
+  color: var(--orange); padding: 1rem; border-radius: 2px; text-align: center;
+  font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; line-height: 1.8; display: none;
+}
+.login-locked.show { display: block; }
+.login-close-x {
+  position: absolute; top: 1rem; right: 1rem; background: transparent; border: none;
+  color: var(--muted); cursor: pointer; font-size: 1rem; padding: 0.3rem; transition: color 0.2s;
+}
+.login-close-x:hover { color: var(--cyan); }
+
+/* Main overlay */
+#adminOverlay {
+  display: none; position: fixed; inset: 0; z-index: 999999;
+  background: rgba(2,11,24,0.95); backdrop-filter: blur(10px);
+  overflow-y: auto; padding: 2rem;
+}
+#adminOverlay.open { display: block; }
+#adminPanel {
+  max-width: 860px; margin: 0 auto;
+  background: rgba(4,18,37,0.9); border: 1px solid rgba(0,212,255,0.3);
+  border-radius: 6px; padding: 2rem; position: relative;
+}
+#adminPanel h2 { font-family: 'Share Tech Mono', monospace; color: var(--cyan); font-size: 1.1rem; letter-spacing: 0.2em; }
+#adminPanel .admin-sub { font-size: 0.72rem; color: var(--muted); margin-bottom: 1.5rem; font-family: 'Share Tech Mono', monospace; margin-top: 0.3rem; }
+.admin-close {
+  background: transparent; border: 1px solid var(--border); color: var(--muted);
+  padding: 0.3rem 0.8rem; cursor: pointer; font-family: 'Rajdhani', sans-serif;
+  font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; transition: all 0.2s;
+}
+.admin-close:hover { border-color: var(--cyan); color: var(--cyan); }
+.admin-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+.admin-tab {
+  padding: 0.45rem 1rem; background: transparent; border: 1px solid var(--border); color: var(--muted);
+  font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.78rem;
+  letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
+}
+.admin-tab:hover, .admin-tab.active { background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan); }
+.admin-section { display: none; }
+.admin-section.active { display: block; }
+.admin-group { margin-bottom: 1.4rem; }
+.admin-label { font-family: 'Share Tech Mono', monospace; font-size: 0.68rem; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+.admin-input, .admin-textarea {
+  width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
+  color: var(--text); padding: 0.6rem 0.9rem; font-family: 'Inter', sans-serif;
+  font-size: 0.88rem; border-radius: 2px; outline: none; transition: border 0.2s;
+}
+.admin-input:focus, .admin-textarea:focus { border-color: var(--cyan); }
+.admin-textarea { min-height: 80px; resize: vertical; }
+.admin-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.admin-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+.admin-card-list { display: flex; flex-direction: column; gap: 0.8rem; }
+.admin-card-item { background: rgba(0,0,0,0.3); border: 1px solid var(--border); padding: 1rem 1rem 0.8rem; border-radius: 2px; position: relative; padding-top: 2.2rem; }
+.admin-card-item .admin-remove {
+  position: absolute; top: 0.7rem; right: 0.7rem;
+  background: rgba(255,60,60,0.15); border: 1px solid rgba(255,60,60,0.3);
+  color: #ff6b6b; padding: 0.2rem 0.6rem; font-size: 0.68rem;
+  cursor: pointer; font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  letter-spacing: 0.05em; border-radius: 2px; transition: all 0.2s;
+}
+.admin-card-item .admin-remove:hover { background: rgba(255,60,60,0.3); }
+.admin-add-btn {
+  background: rgba(0,212,255,0.06); border: 1px dashed rgba(0,212,255,0.25);
+  color: var(--cyan); padding: 0.65rem; width: 100%; cursor: pointer;
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.82rem;
+  letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s;
+  border-radius: 2px; margin-top: 0.5rem;
+}
+.admin-add-btn:hover { background: rgba(0,212,255,0.14); border-color: var(--cyan); }
+.admin-save-btn {
+  background: var(--cyan); color: var(--bg); border: none; padding: 0.8rem 2rem;
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem;
+  letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+  clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+  transition: all 0.3s; width: 100%; margin-top: 1.5rem;
+}
+.admin-save-btn:hover { background: var(--cyan2); }
+.admin-save-btn.saved { background: var(--green); }
+.photo-preview-area { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
+.photo-preview-area img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--cyan); object-fit: cover; }
+.no-photo { width: 70px; height: 70px; border-radius: 50%; border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--muted); }
+.admin-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.4rem; font-family: 'Share Tech Mono', monospace; }
+.admin-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+@media(max-width:600px){
+  #adminPanel { padding: 1.2rem 1rem; }
+  #adminPanel h2 { font-size: 0.85rem; }
+  .admin-tabs { gap: 0.3rem; }
+  .admin-tab { padding: 0.35rem 0.7rem; font-size: 0.7rem; }
+  .admin-grid-2 { grid-template-columns: 1fr !important; }
+  .admin-grid-3 { grid-template-columns: 1fr !important; }
+  #adminOverlay { padding: 0.8rem; }
+  .admin-save-btn { clip-path: none; border-radius: 3px; }
+  #adminPanel > div:first-child { flex-direction: column; gap: 0.7rem; align-items: flex-start; }
+}
+@media(max-width:600px){
+  #adminBtn { bottom: 1.2rem; right: 1rem; padding: 0.4rem 0.8rem; font-size: 0.6rem; }
+  .float-wa { bottom: 1.2rem; left: 1rem; width: 44px; height: 44px; }
+  .login-box { width: 92vw; padding: 1.8rem 1.3rem; }
+}
 </style>
 </head>
 <body>
@@ -658,6 +779,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#certifications">Certs</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#exp-letter">Exp Letter</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -699,7 +821,7 @@
         <div class="card-title">// IT ENGINEER · SYSTEM ADMIN //</div>
         <div class="card-divider"></div>
         <div class="card-info">
-          <div>📍 <span>Gaya, Bihar, India</span></div>
+          <div>📍 <span>Gaya Ji, Bihar, India</span></div>
           <div>📞 <span>+91-7004830163</span></div>
           <div>🎓 <span>M.Sc. Information Technology</span></div>
           <div>🌐 <span>Open to Relocation</span></div>
@@ -735,15 +857,17 @@
         <p class="about-para">I am currently seeking opportunities where I can apply my technical expertise, adaptability, and commitment to contributing to organizational success while continuing to grow professionally.</p>
         <div class="about-tags">
           <span class="at">Windows Admin</span>
-          <span class="at">Linux (CentOS/BOSS)</span>
-          <span class="at">Active Directory</span>
-          <span class="at">Network Mgmt</span>
-          <span class="at">L1/L2 Support</span>
-          <span class="at">IT Infrastructure</span>
+          <span class="at">Linux Administration (CentOS/BOSS)</span>
+          <span class="at">Active Directory Domain Join</span>
+          <span class="at">Domain Migration</span>
+          <span class="at">OS Installation & Deployment</span>
+          <span class="at">Network Troubleshooting</span>
+          <span class="at">L1/L2 Technical Support</span>
+          <span class="at">IT Infrastructure Support</span>
           <span class="at">CDAC Exam Systems</span>
-          <span class="at">Hardware Support</span>
-          <span class="at">Azure Fundamentals</span>
-          <span class="at">Cybersecurity Basics</span>
+          <span class="at">Hardware Troubleshooting</span>
+          <span class="at">Microsoft 365</span>
+          <span class="at">Remote Support</span>
         </div>
       </div>
       <div class="about-stats-col">
@@ -781,38 +905,38 @@
       <div class="skill-card">
         <div class="skill-icon">🖥️</div>
         <div class="skill-name">System Administration</div>
-        <div style="color:var(--muted);font-size:0.8rem">Windows & Linux OS management, Active Directory, domain migration, user access control</div>
-        <div class="skill-tags"><span class="skill-tag">Windows Server</span><span class="skill-tag">CentOS</span><span class="skill-tag">BOSS Linux</span><span class="skill-tag">Active Directory</span></div>
+        <div style="color:var(--muted);font-size:0.8rem">Windows & Linux (CentOS/BOSS), Active Directory Domain Join, Domain Migration, OS Installation & Deployment</div>
+        <div class="skill-tags"><span class="skill-tag">Windows Admin</span><span class="skill-tag">CentOS</span><span class="skill-tag">BOSS Linux</span><span class="skill-tag">Domain Join</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🌐</div>
         <div class="skill-name">Network Management</div>
-        <div style="color:var(--muted);font-size:0.8rem">Network simulation, traffic monitoring, troubleshooting with Wireshark & Packet Tracer</div>
-        <div class="skill-tags"><span class="skill-tag">Wireshark</span><span class="skill-tag">Packet Tracer</span><span class="skill-tag">TCP/IP</span><span class="skill-tag">LAN/WAN</span></div>
+        <div style="color:var(--muted);font-size:0.8rem">LAN/WAN troubleshooting, TCP/IP configuration, DNS & DHCP client configuration, network connectivity troubleshooting</div>
+        <div class="skill-tags"><span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">DHCP</span><span class="skill-tag">LAN/WAN</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🔧</div>
         <div class="skill-name">Hardware & IT Support</div>
-        <div style="color:var(--muted);font-size:0.8rem">L1/L2 support, hardware troubleshooting, OS installation, patch management, SLA compliance</div>
-        <div class="skill-tags"><span class="skill-tag">L1/L2 Support</span><span class="skill-tag">Hardware</span><span class="skill-tag">SLA</span></div>
+        <div style="color:var(--muted);font-size:0.8rem">L1/L2 Technical support, Hardware troubleshooting, OS installation & deployment, Driver configuration, Software installation and System maintenance.</div>
+        <div class="skill-tags"><span class="skill-tag">L1/L2 Support</span><span class="skill-tag">Hardware</span><span class="skill-tag">OS Deployment</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">📝</div>
         <div class="skill-name">Exam IT Management</div>
-        <div style="color:var(--muted);font-size:0.8rem">End-to-end online examination systems for defense recruitment (Agniveer, AFCAT, Coast Guard)</div>
-        <div class="skill-tags"><span class="skill-tag">CDAC ATC</span><span class="skill-tag">OEMS</span><span class="skill-tag">Biometrics</span></div>
+        <div style="color:var(--muted);font-size:0.8rem">End-to-end Online examination infrastructure, CDAC exam systems, biometric setup, technical support, server readiness (Agniveer, AFCAT, Coast Guard, Indian Navy)</div>
+        <div class="skill-tags"><span class="skill-tag">CDAC ATC</span><span class="skill-tag">Server Setup</span><span class="skill-tag">Biometrics</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">☁️</div>
         <div class="skill-name">Cloud & Security</div>
-        <div style="color:var(--muted);font-size:0.8rem">Azure fundamentals, network security, cybersecurity foundations, ethical hacking principles</div>
-        <div class="skill-tags"><span class="skill-tag">Azure AZ-900</span><span class="skill-tag">AZ-700</span><span class="skill-tag">Cybersecurity</span></div>
+        <div style="color:var(--muted);font-size:0.8rem">Remote support, system maintenance, basic cybersecurity practices, endpoint troubleshooting</div>
+        <div class="skill-tags"><span class="skill-tag">AnyDesk</span><span class="skill-tag">TeamViewer</span><span class="skill-tag">Remote Assistance</span></div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">💻</div>
         <div class="skill-name">Productivity & Dev Tools</div>
-        <div style="color:var(--muted);font-size:0.8rem">MS Office suite, HTML/CSS, Python basics, report preparation and documentation</div>
-        <div class="skill-tags"><span class="skill-tag">MS Office</span><span class="skill-tag">Python</span><span class="skill-tag">HTML/CSS</span><span class="skill-tag">Docker</span></div>
+        <div style="color:var(--muted);font-size:0.8rem">Portfolio development, Documentation and Version control using modern web technologies and development tools.</div>
+        <div class="skill-tags"><span class="skill-tag">VS Code</span><span class="skill-tag">HTML/CSS/JavaScript</span><span class="skill-tag">GitHub</span><span class="skill-tag">MS Office</span></div>
       </div>
     </div>
   </div>
@@ -831,13 +955,13 @@
         <div class="exp-company">Precision Infomatic Pvt. Ltd. &nbsp;·&nbsp; Freelance – Banking &amp; IT Support</div>
         <div class="exp-card">
           <ul class="exp-points">
-            <li>Provided onsite and remote L1/L2 IT support for banking environments ensuring SLA compliance</li>
-            <li>Performed Windows OS installation, system configuration, and post-format setup activities</li>
-            <li>Configured security settings, renamed administrator accounts, and managed user access per org standards</li>
-            <li>Executed computer renaming, domain migration, and Active Directory domain joining processes</li>
-            <li>Coordinated with central IT teams for domain authentication, user profile migration, and deployment</li>
-            <li>Diagnosed and resolved hardware, OS, software, printer, and network-related issues</li>
-            <li>Performed software installation, patch management, health checks, and preventive maintenance</li>
+            <li>Provided onsite and remote L1/L2 IT support for banking environments, ensuring timely issue resolution.</li>
+            <li>Performed Windows OS installation, system configuration, driver installation, and post-format setup.</li>
+            <li>Configured security settings, renamed administrator accounts, and performed user account configuration.</li>
+            <li>Executed computer renaming, domain migration, and Active Directory domain joining processes.</li>
+            <li>Coordinated with central IT teams for domain authentication, user profile migration, and technical support.</li>
+            <li>Diagnosed and resolved hardware, OS, software, printer, and network-related issues.</li>
+            <li>Performed software installation, system updates, routine maintenance, and health checks.</li>
           </ul>
         </div>
       </div>
@@ -848,16 +972,16 @@
         <div class="exp-company">CDAC ATC – Astric &amp; Career Foresight, Patna &nbsp;|&nbsp; Astric Solutions</div>
         <div class="exp-card">
           <ul class="exp-points">
-            <li>Provided end-to-end system administration for high-profile defense exams: Agniveer, AFCAT, Indian Coast Guard</li>
-            <li>Installed and configured Windows, CentOS, and BOSS Linux via GUI and CLI for large-scale exam infrastructure</li>
-            <li>Utilized Packet Tracer, Wireshark for network simulation, traffic monitoring, and real-time troubleshooting</li>
-            <li>Served as primary technical liaison between CDAC, defense officials, and examination staff</li>
-            <li>Trained and supervised invigilators, biometric operators, and technical staff on systems and protocols</li>
-            <li>Monitored exam systems in real-time, resolving issues to ensure 100% uptime during critical operations</li>
-            <li>Applied OS updates, security patches, and performance optimizations for system integrity</li>
-            <li>Implemented scheduled backup and recovery plans to protect critical exam data</li>
-            <li>Worked across UP, Bihar, Maharashtra and Telangana in multiple city deployments</li>
-            <li>Progressed through roles: Chief Invigilator-2 → Chief Invigilator-1 → SSA (promoted)</li>
+            <li>Provided end-to-end system administration and technical support for large-scale defense recruitment examinations including Agniveer, AFCAT, Indian Coast Guard, and Indian Navy INCET.</li>
+            <li>Installed and configured Windows, CentOS, and BOSS Linux using GUI and CLI for large-scale exam infrastructure.</li>
+            <li>Performed LAN/WAN troubleshooting, TCP/IP configuration, and network connectivity testing using Packet Tracer and Wireshark.</li>
+            <li>Served as primary technical liaison between CDAC, defense officials, and examination staff.</li>
+            <li>Trained and supported invigilators, biometric operators, and technical staff during examination activities.</li>
+            <li>Monitored exam systems in real time, ensuring smooth and uninterrupted examination operations.</li>
+            <li>Performed OS installation, software deployment, system updates, and routine maintenance.</li>
+            <li>Configured primary, secondary, and DHCP servers for secure online examination environments.</li>
+            <li>Worked across Uttar Pradesh, Bihar, Maharashtra, and Telangana for multi-city examination deployments.</li>
+            <li>Progressed through roles: Chief Invigilator-2 → Chief Invigilator-1 → System Software Administrator (SSA).</li>
           </ul>
         </div>
       </div>
@@ -872,7 +996,7 @@
     <div class="section-tag">Verified Credentials</div>
     <div class="section-title">Certifications <span>&amp; Training</span></div>
     <div class="certs-grid">
-      <div class="cert-card"><div class="cert-emoji">🛡️</div><div class="cert-text"><div class="cert-name">Certificate Course in Network Security (Grade B)</div><div class="cert-issuer">C-DAC ACTS, Pune</div></div></div>
+      <div class="cert-card"><div class="cert-emoji">🛡️</div><div class="cert-text"><div class="cert-name">Certificate Course in Network Security (CCNS)</div><div class="cert-issuer">C-DAC ACTS, Pune</div></div></div>
       <div class="cert-card"><div class="cert-emoji">💡</div><div class="cert-text"><div class="cert-name">Certificate in Online Exam Management System (OEMS)</div><div class="cert-issuer">C-DAC ACTS, Pune</div></div></div>
       <div class="cert-card"><div class="cert-emoji">🌐</div><div class="cert-text"><div class="cert-name">CompTIA Network+ (N10-009) Cert Prep</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
       <div class="cert-card"><div class="cert-emoji">☁️</div><div class="cert-text"><div class="cert-name">Microsoft Azure Fundamentals (AZ-900) Cert Prep</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
@@ -1136,13 +1260,13 @@
         </div>
         <div class="contact-item">
           <div class="contact-icon">📍</div>
-          <div><span class="contact-label">LOCATION</span><span class="contact-value">Gaya, Bihar, India · Open to Relocation</span></div>
+          <div><span class="contact-label">LOCATION</span><span class="contact-value">Gaya Ji, Bihar, India · Open to Relocation</span></div>
         </div>
         <div style="margin-top:1.5rem">
           <div class="section-tag" style="margin-bottom:1rem">Languages</div>
           <div class="lang-row">
-            <div class="lang-pill"><span>🇮🇳</span> Hindi</div>
             <div class="lang-pill"><span>🇬🇧</span> English</div>
+            <div class="lang-pill"><span>🇮🇳</span> Hindi</div>
             <div class="lang-pill"><span>🕌</span> Urdu</div>
           </div>
         </div>
@@ -1174,7 +1298,7 @@
 
 <footer>
   <div>PORTFOLIO_v1.0 &nbsp;·&nbsp; <span>MD SHAHNAWAZ</span> &nbsp;·&nbsp; IT ENGINEER · SYSTEM ADMINISTRATOR · IT SUPPORT SPECIALIST</div>
-  <div style="margin-top:0.5rem;color:rgba(106,154,184,0.5)">© 2026 · Gaya, Bihar, India · All rights reserved</div>
+  <div style="margin-top:0.5rem;color:rgba(106,154,184,0.5)">© 2026 · Gaya Ji, Bihar, India · All rights reserved</div>
 </footer>
 
 </div><!-- end .content -->
@@ -1339,7 +1463,7 @@ revealEls.forEach(el => observer.observe(el));
 
 // Hero card tilt on mouse
 const heroCard = document.querySelector('.hero-card-inner');
-if(heroCard){
+if(heroCard && window.matchMedia('(pointer: fine)').matches){
   document.addEventListener('mousemove', e => {
     const rect = heroCard.getBoundingClientRect();
     const cx = rect.left + rect.width/2;
@@ -1349,6 +1473,11 @@ if(heroCard){
     heroCard.style.animation = 'none';
     heroCard.style.transform = `rotateX(${-rx2}deg) rotateY(${ry2}deg) translateY(-5px)`;
     heroCard.style.boxShadow = `0 40px 80px rgba(0,212,255,0.2)`;
+  });
+  heroCard.addEventListener('mouseleave', () => {
+    heroCard.style.animation = 'float3d 6s ease-in-out infinite';
+    heroCard.style.transform = '';
+    heroCard.style.boxShadow = '';
   });
 }
 
@@ -1370,15 +1499,27 @@ function closeLightbox(){ document.getElementById('lightbox').classList.remove('
 function prevImg(){ lbIdx=(lbIdx-1+lbImgs.length)%lbImgs.length; showLb(); }
 function nextImg(){ lbIdx=(lbIdx+1)%lbImgs.length; showLb(); }
 document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') closeLightbox();
-  if(e.key==='ArrowLeft') prevImg();
-  if(e.key==='ArrowRight') nextImg();
+  const lb = document.getElementById('lightbox');
+  if(e.key==='Escape' && lb && lb.classList.contains('open')) { closeLightbox(); return; }
+  if(lb && lb.classList.contains('open') && e.key==='ArrowLeft') { prevImg(); return; }
+  if(lb && lb.classList.contains('open') && e.key==='ArrowRight') { nextImg(); return; }
 });
 
 
 function toggleExpLetter(){
   document.getElementById('expLetterViewer').classList.toggle('open');
 }
+// Touch swipe for lightbox
+(function(){
+  let startX = 0;
+  const lb = document.getElementById('lightbox');
+  if(!lb) return;
+  lb.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 50) { if(dx < 0) nextImg(); else prevImg(); }
+  }, {passive:true});
+})();
 
 
 // Typing animation
@@ -1414,9 +1555,10 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   });
 });
 
-// Active nav highlight on scroll
+// Active nav highlight + scroll-to-top
 const navLinks = document.querySelectorAll('.nav-links a');
 const sectionEls = document.querySelectorAll('section[id]');
+const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
   let current = '';
   sectionEls.forEach(s => {
@@ -1425,8 +1567,877 @@ window.addEventListener('scroll', () => {
   navLinks.forEach(a => {
     a.style.color = a.getAttribute('href') === '#'+current ? 'var(--cyan)' : '';
   });
+  if(scrollTopBtn) {
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  }
 }, { passive: true });
 
 </script>
+
+<!-- ===== ADMIN PANEL ===== -->
+<!-- Stealth button: low opacity, only visible on hover -->
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑</button>
+<button id="adminBtn" onclick="openLogin()" title="Admin">⚙</button>
+
+<!-- LOGIN SCREEN -->
+<div id="adminLogin">
+  <div class="login-box">
+    <button class="login-close-x" onclick="closeLogin()">✕</button>
+    <div class="login-logo">// SECURE ACCESS //</div>
+    <div class="login-title">ADMIN LOGIN</div>
+    <div class="login-sub" id="loginSub">Portfolio management panel</div>
+    <div id="loginForm">
+      <div class="login-field">
+        <label>USERNAME</label>
+        <input type="text" id="loginUser" placeholder="Enter username" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="login-field">
+        <label>PASSWORD</label>
+        <input type="password" id="loginPass" placeholder="Enter password" autocomplete="off">
+      </div>
+      <button class="login-btn" id="loginBtn" onclick="attemptLogin()">🔐 ACCESS PANEL</button>
+      <div class="login-error" id="loginError"></div>
+      <div class="login-attempts" id="loginAttempts"></div>
+    </div>
+    <div class="login-locked" id="loginLocked">
+      🔒 ACCESS TEMPORARILY LOCKED<br>
+      Too many failed attempts.<br>
+      <span id="lockTimer">Please wait...</span>
+    </div>
+    <div style="text-align:center;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border)">
+      <button onclick="openSetupScreen()" style="background:transparent;border:none;color:var(--muted);font-family:'Share Tech Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color 0.2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">⚙ First time? Set your credentials</button>
+    </div>
+  </div>
+</div>
+
+<!-- FIRST-TIME SETUP / CHANGE CREDENTIALS SCREEN -->
+<div id="setupScreen" style="display:none;position:fixed;inset:0;z-index:999998;background:rgba(2,11,24,0.98);backdrop-filter:blur(20px);align-items:center;justify-content:center;">
+  <div class="login-box" style="width:400px">
+    <button class="login-close-x" onclick="closeSetupScreen()">✕</button>
+    <div class="login-logo">// CREDENTIALS SETUP //</div>
+    <div class="login-title" style="font-size:1.3rem">SET CREDENTIALS</div>
+    <div class="login-sub" id="setupSubText">Set your custom username and password</div>
+    <div id="setupVerifyBlock">
+      <div class="login-field">
+        <label>CURRENT PASSWORD <span style="color:var(--muted)">(verification)</span></label>
+        <input type="password" id="setupVerifyPw" placeholder="Enter current password">
+      </div>
+    </div>
+    <div class="login-field">
+      <label>NEW USERNAME</label>
+      <input type="text" id="setupUsername" placeholder="e.g. shahnawaz" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="login-field">
+      <label>NEW PASSWORD</label>
+      <input type="password" id="setupNewPw" placeholder="Min 6 characters">
+    </div>
+    <div class="login-field">
+      <label>CONFIRM NEW PASSWORD</label>
+      <input type="password" id="setupConfirmPw" placeholder="Repeat new password">
+    </div>
+    <button class="login-btn" onclick="saveSetupCredentials()">✅ SAVE CREDENTIALS</button>
+    <div class="login-error" id="setupError"></div>
+    <button onclick="closeSetupScreen()" style="width:100%;margin-top:0.7rem;background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.6rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:0.1em;font-size:0.85rem;transition:all 0.2s" onmouseover="this.style.borderColor='var(--muted)'" onmouseout="">CANCEL</button>
+  </div>
+</div>
+
+<!-- CHANGE PASSWORD MODAL -->
+<div id="changePwModal" style="display:none;position:fixed;inset:0;z-index:9999999;background:rgba(2,11,24,0.97);backdrop-filter:blur(20px);align-items:center;justify-content:center;">
+  <div class="login-box">
+    <div class="login-logo">// SECURITY //</div>
+    <div class="login-title">CHANGE PASSWORD</div>
+    <div class="login-sub">Set your new secure password below</div>
+    <div class="login-field">
+      <label>CURRENT PASSWORD</label>
+      <input type="password" id="cpCurrent" placeholder="Current password">
+    </div>
+    <div class="login-field">
+      <label>NEW PASSWORD</label>
+      <input type="password" id="cpNew" placeholder="Min 6 characters">
+    </div>
+    <div class="login-field">
+      <label>CONFIRM NEW PASSWORD</label>
+      <input type="password" id="cpConfirm" placeholder="Repeat new password">
+    </div>
+    <button class="login-btn" onclick="changePassword()">✅ UPDATE PASSWORD</button>
+    <div class="login-error" id="cpError"></div>
+    <button style="width:100%;margin-top:0.7rem;background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.6rem;cursor:pointer;font-family:Rajdhani,sans-serif;font-weight:600;letter-spacing:0.1em;font-size:0.85rem;" onclick="closeChangePw()">CANCEL</button>
+  </div>
+</div>
+
+<!-- MAIN ADMIN OVERLAY -->
+<div id="adminOverlay">
+  <div id="adminPanel">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.3rem">
+      <h2>// PORTFOLIO ADMIN PANEL</h2>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span id="sessionTimer" style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:var(--muted)"></span>
+        <button onclick="openChangePw()" style="background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.3rem 0.8rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.7rem;letter-spacing:0.08em;transition:all 0.2s;" onmouseover="this.style.color='var(--cyan)';this.style.borderColor='var(--cyan)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">🔑 CHANGE PW</button>
+        <button onclick="logoutAdmin()" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.3);color:#ff6b6b;padding:0.3rem 0.8rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.08em;transition:all 0.2s;">⏻ LOGOUT</button>
+        <button class="admin-close" onclick="closeAdmin()">✕ CLOSE</button>
+      </div>
+    </div>
+    <div class="admin-sub">Logged in as <span style="color:var(--cyan)" id="loggedUserDisplay"></span> — Session auto-expires after 30 mins of inactivity</div>
+
+    <!-- TABS -->
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="switchTab('tab-profile',this)">👤 Profile</button>
+      <button class="admin-tab" onclick="switchTab('tab-photo',this)">🖼 Photo</button>
+      <button class="admin-tab" onclick="switchTab('tab-stats',this)">📊 Stats</button>
+      <button class="admin-tab" onclick="switchTab('tab-exp',this)">💼 Experience</button>
+      <button class="admin-tab" onclick="switchTab('tab-skills',this)">⚡ Skills</button>
+      <button class="admin-tab" onclick="switchTab('tab-certs',this)">🏅 Certifications</button>
+      <button class="admin-tab" onclick="switchTab('tab-edu',this)">🎓 Education</button>
+      <button class="admin-tab" onclick="switchTab('tab-contact',this)">📞 Contact</button>
+      <button class="admin-tab" onclick="switchTab('tab-security',this)">🔒 Security</button>
+    </div>
+
+    <!-- TAB: PROFILE -->
+    <div class="admin-section active" id="tab-profile">
+      <div class="admin-group">
+        <label class="admin-label">Full Name</label>
+        <input class="admin-input" id="edit-name" placeholder="e.g. MD SHAHNAWAZ">
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">Job Roles — comma separated (appears in typing animation)</label>
+        <input class="admin-input" id="edit-roles" placeholder="e.g. IT_ENGINEER, SYSTEM_ADMIN, IT_SUPPORT_SPECIALIST">
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">Card Title (hero card pe)</label>
+        <input class="admin-input" id="edit-card-title" placeholder="e.g. // IT ENGINEER · SYSTEM ADMIN //">
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">About / Description</label>
+        <textarea class="admin-textarea" id="edit-desc" placeholder="Write about yourself..."></textarea>
+      </div>
+      <div class="admin-grid-2">
+        <div class="admin-group">
+          <label class="admin-label">Location</label>
+          <input class="admin-input" id="edit-location" placeholder="e.g. Gaya, Bihar, India">
+        </div>
+        <div class="admin-group">
+          <label class="admin-label">Email</label>
+          <input class="admin-input" id="edit-email" placeholder="your@email.com">
+        </div>
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">LinkedIn URL</label>
+        <input class="admin-input" id="edit-linkedin" placeholder="https://linkedin.com/in/...">
+      </div>
+      <button class="admin-save-btn" onclick="saveProfile(event)">💾 SAVE PROFILE</button>
+    </div>
+
+    <!-- TAB: PHOTO -->
+    <div class="admin-section" id="tab-photo">
+      <div class="admin-group">
+        <label class="admin-label">Profile Photo — Upload</label>
+        <div class="photo-preview-area">
+          <div class="no-photo" id="photoPreviewWrap">👤</div>
+          <div>
+            <input type="file" id="photoFileInput" accept="image/*" style="display:none" onchange="handlePhotoUpload(event)">
+            <button class="admin-add-btn" style="width:auto;padding:0.5rem 1.5rem" onclick="document.getElementById('photoFileInput').click()">📁 Select Photo</button>
+            <div class="admin-note">// JPG, PNG, WebP — saved in browser</div>
+          </div>
+        </div>
+      </div>
+      <div class="admin-divider"></div>
+      <div class="admin-group">
+        <label class="admin-label">Or paste a photo URL</label>
+        <input class="admin-input" id="edit-photo-url" placeholder="https://example.com/photo.jpg">
+      </div>
+      <button class="admin-save-btn" onclick="savePhoto(event)">💾 SAVE PHOTO</button>
+    </div>
+
+    <!-- TAB: STATS -->
+    <div class="admin-section" id="tab-stats">
+      <div class="admin-note" style="margin-bottom:1rem">// Stats will update in the hero section and cards</div>
+      <div class="admin-grid-3">
+        <div class="admin-group">
+          <label class="admin-label">Years Experience</label>
+          <input class="admin-input" id="stat-years" placeholder="5+">
+        </div>
+        <div class="admin-group">
+          <label class="admin-label">Certifications</label>
+          <input class="admin-input" id="stat-certs" placeholder="15+">
+        </div>
+        <div class="admin-group">
+          <label class="admin-label">MSc Score</label>
+          <input class="admin-input" id="stat-score" placeholder="79%">
+        </div>
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">Exams Conducted</label>
+        <input class="admin-input" id="stat-exams" placeholder="50+">
+      </div>
+      <button class="admin-save-btn" onclick="saveStats(event)">💾 SAVE STATS</button>
+    </div>
+
+    <!-- TAB: EXPERIENCE -->
+    <div class="admin-section" id="tab-exp">
+      <div class="admin-note" style="margin-bottom:1rem">// Add, remove, or edit experience entries</div>
+      <div class="admin-card-list" id="exp-list"></div>
+      <button class="admin-add-btn" onclick="addExpItem()">+ ADD NEW EXPERIENCE</button>
+      <button class="admin-save-btn" onclick="saveExperience(event)">💾 SAVE EXPERIENCE</button>
+    </div>
+
+    <!-- TAB: SKILLS -->
+    <div class="admin-section" id="tab-skills">
+      <div class="admin-note" style="margin-bottom:1rem">// Add, remove, or edit skill cards</div>
+      <div class="admin-card-list" id="skill-list"></div>
+      <button class="admin-add-btn" onclick="addSkillItem()">+ ADD NEW SKILL</button>
+      <button class="admin-save-btn" onclick="saveSkills(event)">💾 SAVE SKILLS</button>
+    </div>
+
+    <!-- TAB: CERTIFICATIONS -->
+    <div class="admin-section" id="tab-certs">
+      <div class="admin-note" style="margin-bottom:1rem">// Add or remove certifications</div>
+      <div class="admin-card-list" id="cert-list"></div>
+      <button class="admin-add-btn" onclick="addCertItem()">+ ADD NEW CERTIFICATION</button>
+      <button class="admin-save-btn" onclick="saveCerts(event)">💾 SAVE CERTIFICATIONS</button>
+    </div>
+
+    <!-- TAB: EDUCATION -->
+    <div class="admin-section" id="tab-edu">
+      <div class="admin-note" style="margin-bottom:1rem">// Add or remove education entries</div>
+      <div class="admin-card-list" id="edu-list"></div>
+      <button class="admin-add-btn" onclick="addEduItem()">+ ADD NEW EDUCATION</button>
+      <button class="admin-save-btn" onclick="saveEdu(event)">💾 SAVE EDUCATION</button>
+    </div>
+
+    <!-- TAB: CONTACT -->
+    <div class="admin-section" id="tab-contact">
+      <div class="admin-grid-2">
+        <div class="admin-group">
+          <label class="admin-label">Phone</label>
+          <input class="admin-input" id="edit-phone" placeholder="+91 9876543210">
+        </div>
+        <div class="admin-group">
+          <label class="admin-label">WhatsApp Number</label>
+          <input class="admin-input" id="edit-whatsapp" placeholder="+91 9876543210">
+        </div>
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">GitHub URL</label>
+        <input class="admin-input" id="edit-github" placeholder="https://github.com/...">
+      </div>
+      <div class="admin-group">
+        <label class="admin-label">City / Availability Detail</label>
+        <input class="admin-input" id="edit-city" placeholder="Gaya, Bihar — Available PAN India">
+      </div>
+      <button class="admin-save-btn" onclick="saveContact(event)">💾 SAVE CONTACT</button>
+    </div>
+
+    <!-- TAB: SECURITY -->
+    <div class="admin-section" id="tab-security">
+      <div class="admin-note" style="margin-bottom:1.5rem;font-size:0.8rem;line-height:1.8">
+        // Manage your security settings here.<br>
+        // Default credentials for first time use: <span style="color:var(--cyan)">admin / shahnawaz@123</span><br>
+        // Change your password immediately after logging in!
+      </div>
+
+      <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border);padding:1.2rem;border-radius:2px;margin-bottom:1.5rem">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:var(--cyan);margin-bottom:1rem;letter-spacing:0.1em">SESSION INFO</div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:2;font-family:'Share Tech Mono',monospace">
+          Logged in as: <span style="color:var(--white)" id="sec-username">—</span><br>
+          Login time: <span style="color:var(--white)" id="sec-logintime">—</span><br>
+          Session expires: <span style="color:var(--cyan)" id="sec-expiry">—</span><br>
+          Failed attempts (total): <span style="color:var(--orange)" id="sec-attempts">—</span>
+        </div>
+      </div>
+
+      <div style="background:rgba(255,107,53,0.05);border:1px solid rgba(255,107,53,0.2);padding:1.2rem;border-radius:2px;margin-bottom:1.5rem">
+        <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:var(--orange);margin-bottom:0.8rem;letter-spacing:0.1em">⚠ DANGER ZONE</div>
+        <div style="display:flex;gap:0.7rem;flex-wrap:wrap;margin-bottom:0.5rem">
+          <button onclick="exportData()" style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);color:var(--cyan);padding:0.6rem 1.4rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">📥 EXPORT DATA</button>
+          <button onclick="importData()" style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);color:var(--cyan);padding:0.6rem 1.4rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">📤 IMPORT DATA</button>
+          <button onclick="resetAllData()" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.3);color:#ff6b6b;padding:0.6rem 1.4rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">🗑 RESET ALL DATA</button>
+        </div>
+        <div class="admin-note">// Export saves all your data as a file. Import restores it on any device.</div>
+        <input type="file" id="importFileInput" accept=".json" style="display:none" onchange="handleImport(event)">
+      </div>
+
+      <button class="admin-save-btn" onclick="openChangePw()" style="background:var(--blue)">🔑 CHANGE PASSWORD</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ===================================================
+// ADMIN PANEL — SECURE VERSION
+// ===================================================
+
+// ---- CONSTANTS ----
+const STORE_KEY      = 'snz_pf_data_v2';
+const AUTH_KEY       = 'snz_auth_v2';
+const LOCK_KEY       = 'snz_lock_v2';
+const SESSION_KEY    = 'snz_sess_v2';
+const MAX_ATTEMPTS   = 5;
+const LOCK_DURATION  = 15 * 60 * 1000; // 15 minutes
+const SESSION_TTL    = 30 * 60 * 1000; // 30 minutes
+
+// ---- Simple hash (obfuscated enough for client-side) ----
+function hashStr(s) {
+  let h = 0x811c9dc5;
+  for(let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = (h * 0x01000193) >>> 0;
+  }
+  return h.toString(16).padStart(8,'0');
+}
+
+// ---- Auth Storage ----
+function getAuth() {
+  try { return JSON.parse(localStorage.getItem(AUTH_KEY)) || null; } catch(e){ return null; }
+}
+function setAuth(username, password) {
+  localStorage.setItem(AUTH_KEY, JSON.stringify({
+    u: hashStr(username.toLowerCase()),
+    p: hashStr(password)
+  }));
+}
+function initAuth() {
+  if(!getAuth()) setAuth('admin','shahnawaz@123');
+}
+
+// ---- Lock Storage ----
+function getLock() {
+  try { return JSON.parse(localStorage.getItem(LOCK_KEY)) || {attempts:0, lockedUntil:0}; } catch(e){ return {attempts:0, lockedUntil:0}; }
+}
+function setLock(data) { localStorage.setItem(LOCK_KEY, JSON.stringify(data)); }
+function isLocked() { const l=getLock(); return Date.now() < l.lockedUntil; }
+function remainingLock() { return Math.max(0, getLock().lockedUntil - Date.now()); }
+
+// ---- Session ----
+function getSession() {
+  try { return JSON.parse(sessionStorage.getItem(SESSION_KEY)) || null; } catch(e){ return null; }
+}
+function createSession(username) {
+  const s = { user: username, loginTime: Date.now(), lastActive: Date.now() };
+  sessionStorage.setItem(SESSION_KEY, JSON.stringify(s));
+}
+function refreshSession() {
+  const s = getSession();
+  if(s) { s.lastActive = Date.now(); sessionStorage.setItem(SESSION_KEY, JSON.stringify(s)); }
+}
+function destroySession() { sessionStorage.removeItem(SESSION_KEY); }
+function isSessionValid() {
+  const s = getSession();
+  if(!s) return false;
+  if(Date.now() - s.lastActive > SESSION_TTL) { destroySession(); return false; }
+  return true;
+}
+
+// ---- Data ----
+function loadData() {
+  try { return JSON.parse(localStorage.getItem(STORE_KEY)) || {}; } catch(e){ return {}; }
+}
+function saveData(updates) {
+  const d = loadData(); Object.assign(d, updates);
+  localStorage.setItem(STORE_KEY, JSON.stringify(d));
+}
+
+// ---- Login UI ----
+function openLogin() {
+  initAuth();
+  if(isSessionValid()) { openAdmin(); return; }
+  document.getElementById('adminLogin').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  updateLockUI();
+  setTimeout(() => { const el=document.getElementById('loginUser'); if(el) el.focus(); }, 100);
+}
+function closeLogin() {
+  document.getElementById('adminLogin').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function updateLockUI() {
+  const locked = isLocked();
+  document.getElementById('loginForm').style.display = locked ? 'none' : 'block';
+  document.getElementById('loginLocked').classList.toggle('show', locked);
+  if(locked) startLockCountdown();
+}
+let lockInterval = null;
+function startLockCountdown() {
+  clearInterval(lockInterval);
+  lockInterval = setInterval(() => {
+    const rem = remainingLock();
+    if(rem <= 0) { clearInterval(lockInterval); updateLockUI(); return; }
+    const m = Math.floor(rem/60000), s = Math.floor((rem%60000)/1000);
+    document.getElementById('lockTimer').textContent = `Wait ${m}m ${s}s to try again`;
+  }, 1000);
+}
+
+function attemptLogin() {
+  if(isLocked()) return;
+  const user = document.getElementById('loginUser').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  if(!user || !pass) { showLoginError('Please enter both username and password'); return; }
+
+  const auth = getAuth();
+  const lock = getLock();
+
+  if(hashStr(user.toLowerCase()) === auth.u && hashStr(pass) === auth.p) {
+    // SUCCESS
+    lock.attempts = 0; setLock(lock);
+    createSession(user);
+    closeLogin();
+    openAdmin();
+  } else {
+    // FAIL
+    lock.attempts = (lock.attempts || 0) + 1;
+    const remaining = MAX_ATTEMPTS - lock.attempts;
+    if(lock.attempts >= MAX_ATTEMPTS) {
+      lock.lockedUntil = Date.now() + LOCK_DURATION;
+      setLock(lock);
+      updateLockUI();
+    } else {
+      setLock(lock);
+      showLoginError(`Wrong credentials! ${remaining} attempt${remaining>1?'s':''} remaining`);
+      document.getElementById('loginAttempts').textContent = `Total failed attempts: ${lock.attempts}`;
+    }
+    document.getElementById('loginPass').value = '';
+  }
+}
+
+function showLoginError(msg) {
+  const el = document.getElementById('loginError');
+  el.textContent = msg; el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// Enter key on login
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('loginPass')?.addEventListener('keydown', e => {
+    if(e.key === 'Enter') attemptLogin();
+  });
+  document.getElementById('loginUser')?.addEventListener('keydown', e => {
+    if(e.key === 'Enter') document.getElementById('loginPass')?.focus();
+  });
+});
+
+// ---- Change Password ----
+function openChangePw() {
+  document.getElementById('changePwModal').style.display = 'flex';
+}
+function closeChangePw() {
+  document.getElementById('changePwModal').style.display = 'none';
+  ['cpCurrent','cpNew','cpConfirm'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('cpError').classList.remove('show');
+}
+// ---- Setup Credentials Screen ----
+function openSetupScreen() {
+  const isFirstTime = !localStorage.getItem('snz_auth_v2') || false;
+  document.getElementById('setupSubText').textContent = isFirstTime
+    ? 'First time: create your custom username and password'
+    : 'Change your username or password';
+  document.getElementById('setupVerifyBlock').style.display = isFirstTime ? 'none' : 'block';
+  document.getElementById('setupVerifyPw').value = '';
+  document.getElementById('setupUsername').value = '';
+  document.getElementById('setupNewPw').value = '';
+  document.getElementById('setupConfirmPw').value = '';
+  document.getElementById('setupError').classList.remove('show');
+  document.getElementById('setupScreen').style.display = 'flex';
+}
+function closeSetupScreen() {
+  document.getElementById('setupScreen').style.display = 'none';
+}
+function saveSetupCredentials() {
+  const isFirstTime = document.getElementById('setupVerifyBlock').style.display === 'none';
+  const verifyPw = document.getElementById('setupVerifyPw').value;
+  const newUser  = document.getElementById('setupUsername').value.trim();
+  const newPw    = document.getElementById('setupNewPw').value;
+  const confPw   = document.getElementById('setupConfirmPw').value;
+  const errEl    = document.getElementById('setupError');
+
+  if(!isFirstTime) {
+    const auth = getAuth();
+    if(hashStr(verifyPw) !== auth.p) {
+      errEl.textContent = 'Incorrect current password!'; errEl.classList.add('show'); return;
+    }
+  }
+  if(!newUser || newUser.length < 3) {
+    errEl.textContent = 'Username must be at least 3 characters'; errEl.classList.add('show'); return;
+  }
+  if(newPw.length < 6) {
+    errEl.textContent = 'Password must be at least 6 characters'; errEl.classList.add('show'); return;
+  }
+  if(newPw !== confPw) {
+    errEl.textContent = 'Password and confirm password do not match!'; errEl.classList.add('show'); return;
+  }
+  setAuth(newUser, newPw);
+  // Reset lock on credential change
+  setLock({attempts:0, lockedUntil:0});
+  closeSetupScreen();
+  document.getElementById('loginUser').value = newUser;
+  document.getElementById('loginPass').value = '';
+  setTimeout(() => {
+    alert('✅ Credentials saved! Log in with your new username/password.');
+  }, 200);
+}
+
+function changePassword() {
+  const cur = document.getElementById('cpCurrent').value;
+  const nw  = document.getElementById('cpNew').value;
+  const cfm = document.getElementById('cpConfirm').value;
+  const auth = getAuth();
+  const errEl = document.getElementById('cpError');
+
+  if(hashStr(cur) !== auth.p) { errEl.textContent='Incorrect current password!'; errEl.classList.add('show'); return; }
+  if(nw.length < 6) { errEl.textContent='Password must be at least 6 characters'; errEl.classList.add('show'); return; }
+  if(nw !== cfm) { errEl.textContent='New password and confirm password do not match!'; errEl.classList.add('show'); return; }
+
+  const s = getSession();
+  setAuth(s ? s.user : 'admin', nw);
+  closeChangePw();
+  closeAdmin();
+  destroySession();
+  setTimeout(() => { alert('✅ Password change ho gaya! Please log in again.'); openLogin(); }, 300);
+}
+
+// ---- Open/Close Admin Panel ----
+let sessionCheckInterval = null;
+function openAdmin() {
+  if(!isSessionValid()) { openLogin(); return; }
+  refreshSession();
+  document.getElementById('adminOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  populateFields();
+  updateSecurityTab();
+  startSessionTimer();
+  // Session check every 60s
+  sessionCheckInterval = setInterval(() => {
+    if(!isSessionValid()) { closeAdmin(); openLogin(); }
+    else { updateSessionTimer(); }
+  }, 30000);
+}
+function closeAdmin() {
+  document.getElementById('adminOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  clearInterval(sessionCheckInterval);
+}
+function logoutAdmin() {
+  destroySession(); closeAdmin();
+  setTimeout(openLogin, 200);
+}
+
+let sessionTimerInterval = null;
+function startSessionTimer() {
+  updateSessionTimer();
+  clearInterval(sessionTimerInterval);
+  sessionTimerInterval = setInterval(updateSessionTimer, 10000);
+}
+function updateSessionTimer() {
+  const s = getSession();
+  if(!s) return;
+  const rem = SESSION_TTL - (Date.now() - s.lastActive);
+  const m = Math.max(0, Math.floor(rem/60000));
+  const el = document.getElementById('sessionTimer');
+  if(el) el.textContent = `⏱ Session: ${m}m left`;
+}
+function updateSecurityTab() {
+  const s = getSession();
+  if(!s) return;
+  const el1 = document.getElementById('sec-username'); if(el1) el1.textContent = s.user;
+  const el2 = document.getElementById('sec-logintime'); if(el2) el2.textContent = new Date(s.loginTime).toLocaleTimeString();
+  const el3 = document.getElementById('sec-expiry'); if(el3) el3.textContent = new Date(s.loginTime + SESSION_TTL).toLocaleTimeString();
+  const el4 = document.getElementById('sec-attempts'); if(el4) el4.textContent = getLock().attempts || '0';
+  const el5 = document.getElementById('loggedUserDisplay'); if(el5) el5.textContent = s.user;
+}
+
+// Reset activity timer on any admin interaction
+document.getElementById('adminOverlay')?.addEventListener('mousemove', refreshSession);
+document.getElementById('adminOverlay')?.addEventListener('keydown', refreshSession);
+
+// ---- Tab Switching ----
+function switchTab(id, btn) {
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(id === 'tab-security') updateSecurityTab();
+}
+
+// ---- Populate All Fields ----
+function populateFields() {
+  const d = loadData();
+  const setVal = (id, val) => { const el = document.getElementById(id); if(el && val) el.value = val; };
+  setVal('edit-name', d.name);
+  setVal('edit-roles', d.roles);
+  setVal('edit-card-title', d.cardTitle);
+  setVal('edit-desc', d.desc);
+  setVal('edit-location', d.location);
+  setVal('edit-email', d.email);
+  setVal('edit-linkedin', d.linkedin);
+  setVal('stat-years', d.statYears);
+  setVal('stat-certs', d.statCerts);
+  setVal('stat-score', d.statScore);
+  setVal('stat-exams', d.statExams);
+  setVal('edit-phone', d.phone);
+  setVal('edit-whatsapp', d.whatsapp);
+  setVal('edit-github', d.github);
+  setVal('edit-city', d.city);
+  if(d.photoUrl) { setVal('edit-photo-url', d.photoUrl); showPhotoPreview(d.photoUrl); }
+  renderExpList(d.experience || getDefaultExp());
+  renderCertList(d.certifications || getDefaultCerts());
+  renderEduList(d.education || getDefaultEdu());
+  renderSkillList(d.skills || getDefaultSkills());
+}
+
+// ---- Apply All Saved Data on Page Load ----
+function applyAllData() {
+  const d = loadData();
+  if(!d || Object.keys(d).length === 0) return;
+  if(d.name) document.querySelectorAll('.card-name').forEach(el => el.textContent = d.name);
+  if(d.cardTitle) document.querySelectorAll('.card-title').forEach(el => el.textContent = d.cardTitle);
+  if(d.roles) {
+    window._customRoles = d.roles.split(',').map(r=>r.trim()).filter(Boolean);
+  }
+  if(d.desc) { const el=document.querySelector('.hero-desc'); if(el) el.textContent = d.desc; }
+  if(d.photoUrl) applyPhoto(d.photoUrl);
+  const statEls = document.querySelectorAll('.stat-num');
+  if(d.statYears && statEls[0]) statEls[0].textContent = d.statYears;
+  if(d.statCerts && statEls[1]) statEls[1].textContent = d.statCerts;
+  if(d.statScore && statEls[2]) statEls[2].textContent = d.statScore;
+  if(d.statExams) { const a=document.querySelectorAll('.ast-num'); if(a[1]) a[1].textContent = d.statExams; }
+  if(d.email) document.querySelectorAll('a[href^="mailto:"]').forEach(el => { el.href='mailto:'+d.email; if(el.textContent.includes('@')) el.textContent=d.email; });
+  if(d.phone) document.querySelectorAll('a[href^="tel:"]').forEach(el => { el.href='tel:'+d.phone.replace(/\s/g,''); if(el.textContent.match(/[\d\+]/)) el.textContent=d.phone; });
+  if(d.linkedin) document.querySelectorAll('a[href*="linkedin"]').forEach(el => el.href=d.linkedin);
+  if(d.github) document.querySelectorAll('a[href*="github"]').forEach(el => el.href=d.github);
+  if(d.experience) renderExpOnPage(d.experience);
+  if(d.certifications) renderCertsOnPage(d.certifications);
+  if(d.education) renderEduOnPage(d.education);
+  if(d.skills) renderSkillsOnPage(d.skills);
+}
+
+// ---- Photo ----
+function handlePhotoUpload(event) {
+  const file = event.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = e => { showPhotoPreview(e.target.result); window._uploadedPhotoData = e.target.result; document.getElementById('edit-photo-url').value='(uploaded)'; };
+  reader.readAsDataURL(file);
+}
+function showPhotoPreview(url) { document.getElementById('photoPreviewWrap').innerHTML = '<img src="'+url+'" alt="preview">'; }
+function applyPhoto(url) { document.querySelectorAll('.card-photo').forEach(el => el.innerHTML='<img src="'+url+'" alt="Profile Photo">'); }
+function savePhoto(e) {
+  let url = window._uploadedPhotoData || document.getElementById('edit-photo-url').value.trim();
+  if(!url || url==='(uploaded)') url = window._uploadedPhotoData;
+  if(!url) { alert('Please select a photo or enter an image URL!'); return; }
+  saveData({photoUrl:url}); applyPhoto(url); flashSaved(e.target);
+}
+
+// ---- Save Functions ----
+function saveProfile(e) {
+  const data = {
+    name: document.getElementById('edit-name').value.trim(),
+    roles: document.getElementById('edit-roles').value.trim(),
+    cardTitle: document.getElementById('edit-card-title').value.trim(),
+    desc: document.getElementById('edit-desc').value.trim(),
+    location: document.getElementById('edit-location').value.trim(),
+    email: document.getElementById('edit-email').value.trim(),
+    linkedin: document.getElementById('edit-linkedin').value.trim(),
+  };
+  saveData(data); applyAllData();
+  if(data.roles) { window._customRoles=data.roles.split(',').map(r=>r.trim()).filter(Boolean); ri=0;ci=0;deleting=false; }
+  flashSaved(e.target);
+}
+function saveStats(e) {
+  saveData({ statYears:document.getElementById('stat-years').value.trim(), statCerts:document.getElementById('stat-certs').value.trim(), statScore:document.getElementById('stat-score').value.trim(), statExams:document.getElementById('stat-exams').value.trim() });
+  applyAllData(); flashSaved(e.target);
+}
+function saveContact(e) {
+  saveData({ phone:document.getElementById('edit-phone').value.trim(), whatsapp:document.getElementById('edit-whatsapp').value.trim(), github:document.getElementById('edit-github').value.trim(), city:document.getElementById('edit-city').value.trim() });
+  applyAllData(); flashSaved(e.target);
+}
+function flashSaved(btn) {
+  const orig = btn.textContent; btn.textContent='✅ SAVED!'; btn.classList.add('saved');
+  setTimeout(() => { btn.textContent=orig; btn.classList.remove('saved'); location.reload(); }, 1200);
+}
+function resetAllData() {
+  if(!confirm('Are you sure you want to delete all data? This cannot be undone!')) return;
+  localStorage.removeItem(STORE_KEY); location.reload();
+}
+function exportData() {
+  const d = loadData();
+  const json = JSON.stringify(d, null, 2);
+  const blob = new Blob([json], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'shahnawaz-portfolio-data.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function importData() {
+  document.getElementById('importFileInput').click();
+}
+function handleImport(e) {
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      localStorage.setItem(STORE_KEY, JSON.stringify(data));
+      alert('✅ Data imported successfully! Page will reload.');
+      location.reload();
+    } catch(err) {
+      alert('❌ Invalid file. Please use an exported portfolio data file.');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// ===== EXPERIENCE =====
+function getDefaultExp() {
+  return [
+    { period:'2025 — PRESENT', role:'Field Support Engineer', company:'Precision Infomatic Pvt. Ltd. · Freelance – Banking & IT Support', points:'Provided onsite and remote L1/L2 IT support for banking environments ensuring SLA compliance\nPerformed Windows OS installation, system configuration, and post-format setup activities\nConfigured security settings, renamed administrator accounts, and managed user access per org standards\nExecuted computer renaming, domain migration, and Active Directory domain joining processes\nCoordinated with central IT teams for domain authentication, user profile migration, and deployment\nDiagnosed and resolved hardware, OS, software, printer, and network-related issues\nPerformed software installation, patch management, health checks, and preventive maintenance' },
+    { period:'2020 — 2025 · 5 YEARS', role:'System Software Administrator (SSA)', company:'CDAC ATC – Astric & Career Foresight, Patna | Astric Solutions', points:'Provided end-to-end system administration for high-profile defense exams: Agniveer, AFCAT, Indian Coast Guard\nInstalled and configured Windows, CentOS, and BOSS Linux via GUI and CLI for large-scale exam infrastructure\nUtilized Packet Tracer, Wireshark for network simulation, traffic monitoring, and real-time troubleshooting\nServed as primary technical liaison between CDAC, defense officials, and examination staff\nTrained and supervised invigilators, biometric operators, and technical staff on systems and protocols\nMonitored exam systems in real-time, resolving issues to ensure 100% uptime during critical operations\nApplied OS updates, security patches, and performance optimizations for system integrity\nImplemented scheduled backup and recovery plans to protect critical exam data\nWorked across UP, Bihar, Maharashtra and Telangana in multiple city deployments\nProgressed through roles: Chief Invigilator-2 → Chief Invigilator-1 → SSA (promoted)' }
+  ];
+}
+function renderExpList(data) {
+  const list = document.getElementById('exp-list'); list.innerHTML = '';
+  data.forEach((item, i) => {
+    const div = document.createElement('div'); div.className = 'admin-card-item';
+    div.innerHTML = `<button class="admin-remove" onclick="removeExpItem(${i})">✕ REMOVE</button>
+      <div class="admin-grid-2" style="margin-bottom:0.6rem">
+        <div class="admin-group" style="margin:0"><label class="admin-label">Period</label><input class="admin-input exp-period" value="${item.period||''}"></div>
+        <div class="admin-group" style="margin:0"><label class="admin-label">Role / Job Title</label><input class="admin-input exp-role" value="${item.role||''}"></div>
+      </div>
+      <div class="admin-group" style="margin-bottom:0.6rem"><label class="admin-label">Company</label><input class="admin-input exp-company" value="${item.company||''}"></div>
+      <div class="admin-group" style="margin:0"><label class="admin-label">Points (har line = ek bullet)</label><textarea class="admin-textarea exp-points" rows="5">${item.points||''}</textarea></div>`;
+    list.appendChild(div);
+  });
+}
+function addExpItem() { const i=getExpItems(); i.push({period:'',role:'',company:'',points:''}); renderExpList(i); document.getElementById('exp-list').lastElementChild?.scrollIntoView({behavior:'smooth'}); }
+function removeExpItem(i) { const items=getExpItems(); items.splice(i,1); renderExpList(items); }
+function getExpItems() { return [...document.querySelectorAll('#exp-list .admin-card-item')].map(c=>({period:c.querySelector('.exp-period').value,role:c.querySelector('.exp-role').value,company:c.querySelector('.exp-company').value,points:c.querySelector('.exp-points').value})); }
+function saveExperience(e) { const items=getExpItems(); saveData({experience:items}); renderExpOnPage(items); flashSaved(e.target); }
+function renderExpOnPage(items) {
+  const c=document.querySelector('.exp-timeline'); if(!c) return;
+  c.innerHTML = items.map(item=>`<div class="exp-item"><div class="exp-period">${item.period}</div><div class="exp-role">${item.role}</div><div class="exp-company">${item.company}</div><div class="exp-card"><ul class="exp-points">${item.points.split('\n').filter(p=>p.trim()).map(p=>`<li>${p.trim()}</li>`).join('')}</ul></div></div>`).join('');
+}
+
+// ===== SKILLS =====
+function getDefaultSkills() {
+  return [
+    { icon:'🖥️', name:'System Administration', desc:'Windows Server, CentOS, BOSS Linux — GUI & CLI management, AD, user management', tags:'Windows Server,Linux,Active Directory' },
+    { icon:'🌐', name:'Network Management', desc:'LAN/WAN, TCP/IP, DNS, DHCP, Packet Tracer, Wireshark, network troubleshooting', tags:'TCP/IP,Wireshark,DHCP,DNS' },
+    { icon:'📝', name:'Exam IT Management', desc:'End-to-end online examination systems for defense recruitment (Agniveer, AFCAT, Coast Guard)', tags:'CDAC ATC,OEMS,Biometrics' },
+    { icon:'☁️', name:'Cloud & Security', desc:'Azure fundamentals, network security, cybersecurity foundations, ethical hacking principles', tags:'Azure AZ-900,AZ-700,Cybersecurity' },
+    { icon:'💻', name:'Productivity & Dev Tools', desc:'MS Office suite, HTML/CSS, Python basics, report preparation and documentation', tags:'MS Office,Python,HTML/CSS,Docker' },
+  ];
+}
+function renderSkillList(data) {
+  const list = document.getElementById('skill-list'); list.innerHTML='';
+  data.forEach((item,i) => {
+    const div=document.createElement('div'); div.className='admin-card-item';
+    div.innerHTML=`<button class="admin-remove" onclick="removeSkillItem(${i})">✕ REMOVE</button>
+      <div class="admin-grid-2" style="margin-bottom:0.6rem">
+        <div class="admin-group" style="margin:0"><label class="admin-label">Icon (emoji)</label><input class="admin-input sk-icon" value="${item.icon||'🔧'}"></div>
+        <div class="admin-group" style="margin:0"><label class="admin-label">Skill Name</label><input class="admin-input sk-name" value="${item.name||''}"></div>
+      </div>
+      <div class="admin-group" style="margin-bottom:0.6rem"><label class="admin-label">Description</label><textarea class="admin-textarea sk-desc" rows="2">${item.desc||''}</textarea></div>
+      <div class="admin-group" style="margin:0"><label class="admin-label">Tags (comma separated)</label><input class="admin-input sk-tags" value="${item.tags||''}"></div>`;
+    list.appendChild(div);
+  });
+}
+function addSkillItem() { const i=getSkillItems(); i.push({icon:'🔧',name:'',desc:'',tags:''}); renderSkillList(i); document.getElementById('skill-list').lastElementChild?.scrollIntoView({behavior:'smooth'}); }
+function removeSkillItem(i) { const items=getSkillItems(); items.splice(i,1); renderSkillList(items); }
+function getSkillItems() { return [...document.querySelectorAll('#skill-list .admin-card-item')].map(c=>({icon:c.querySelector('.sk-icon').value,name:c.querySelector('.sk-name').value,desc:c.querySelector('.sk-desc').value,tags:c.querySelector('.sk-tags').value})); }
+function saveSkills(e) { const items=getSkillItems(); saveData({skills:items}); renderSkillsOnPage(items); flashSaved(e.target); }
+function renderSkillsOnPage(items) {
+  const g=document.querySelector('.skills-grid'); if(!g) return;
+  g.innerHTML = items.map(item=>`<div class="skill-card"><div class="skill-icon">${item.icon}</div><div class="skill-name">${item.name}</div><div style="color:var(--muted);font-size:0.8rem">${item.desc}</div><div class="skill-tags">${item.tags.split(',').map(t=>`<span class="skill-tag">${t.trim()}</span>`).join('')}</div></div>`).join('');
+}
+
+// ===== CERTIFICATIONS =====
+function getDefaultCerts() {
+  return [
+    {emoji:'🛡️',name:'Certificate Course in Network Security (Grade B)',issuer:'C-DAC ACTS, Pune'},
+    {emoji:'💡',name:'Certificate in Online Exam Management System (OEMS)',issuer:'C-DAC ACTS, Pune'},
+    {emoji:'🌐',name:'CompTIA Network+ (N10-009) Cert Prep',issuer:'LinkedIn Learning'},
+    {emoji:'☁️',name:'Microsoft Azure Fundamentals (AZ-900) Cert Prep',issuer:'LinkedIn Learning'},
+    {emoji:'🔗',name:'Azure Network Engineer Associate (AZ-700) Cert Prep',issuer:'LinkedIn Learning'},
+    {emoji:'🔒',name:'Cybersecurity Foundations',issuer:'LinkedIn Learning'},
+    {emoji:'⚔️',name:'The Complete Ethical Hacking Course: Beginner to Advanced',issuer:'Udemy'},
+    {emoji:'🎯',name:'Penetration Testing Professional Certificate',issuer:'Cybrary & LinkedIn Learning'},
+    {emoji:'🔍',name:'Penetration Testing Essential Training (2021)',issuer:'LinkedIn Learning'},
+    {emoji:'🐳',name:'Docker Foundations Professional Certificate',issuer:'LinkedIn Learning & Docker'},
+    {emoji:'📶',name:'Wireless Networking: Advanced Troubleshooting',issuer:'LinkedIn Learning'},
+    {emoji:'🐍',name:'Python Programming: Basics to Advanced',issuer:'Udemy'},
+    {emoji:'📊',name:'Postgraduate Diploma in Project Management',issuer:'Udemy / MTF Institute'},
+    {emoji:'💻',name:'IT Literacy Programme (CCC)',issuer:'NIELIT'},
+    {emoji:'🎓',name:'Advanced Diploma in Computer Applications (ADCA)',issuer:'Abhash Computer Classes, Gaya'},
+  ];
+}
+function renderCertList(data) {
+  const list=document.getElementById('cert-list'); list.innerHTML='';
+  data.forEach((item,i) => {
+    const div=document.createElement('div'); div.className='admin-card-item';
+    div.innerHTML=`<button class="admin-remove" onclick="removeCertItem(${i})">✕ REMOVE</button>
+      <div class="admin-grid-3">
+        <div class="admin-group" style="margin:0"><label class="admin-label">Emoji</label><input class="admin-input cert-emoji" value="${item.emoji||'🏅'}"></div>
+        <div class="admin-group" style="margin:0;grid-column:2/4"><label class="admin-label">Certification Name</label><input class="admin-input cert-name" value="${item.name||''}"></div>
+      </div>
+      <div class="admin-group" style="margin-top:0.5rem;margin-bottom:0"><label class="admin-label">Issuing Organization</label><input class="admin-input cert-issuer" value="${item.issuer||''}"></div>`;
+    list.appendChild(div);
+  });
+}
+function addCertItem() { const i=getCertItems(); i.push({emoji:'🏅',name:'',issuer:''}); renderCertList(i); document.getElementById('cert-list').lastElementChild?.scrollIntoView({behavior:'smooth'}); }
+function removeCertItem(i) { const items=getCertItems(); items.splice(i,1); renderCertList(items); }
+function getCertItems() { return [...document.querySelectorAll('#cert-list .admin-card-item')].map(c=>({emoji:c.querySelector('.cert-emoji').value,name:c.querySelector('.cert-name').value,issuer:c.querySelector('.cert-issuer').value})); }
+function saveCerts(e) { const items=getCertItems(); saveData({certifications:items}); renderCertsOnPage(items); flashSaved(e.target); }
+function renderCertsOnPage(items) {
+  const g=document.querySelector('.certs-grid'); if(!g) return;
+  g.innerHTML=items.map(item=>`<div class="cert-card"><div class="cert-emoji">${item.emoji}</div><div class="cert-text"><div class="cert-name">${item.name}</div><div class="cert-issuer">${item.issuer}</div></div></div>`).join('');
+}
+
+// ===== EDUCATION =====
+function getDefaultEdu() {
+  return [
+    {year:'2024',degree:'M.Sc. Information Technology',institute:'A.M. College, Gaya',detail:'79% (Distinction)'},
+    {year:'2022',degree:'B.Sc. (Hons.) Computer Science',institute:'A.M. College, Gaya',detail:''},
+    {year:'2019',degree:'Intermediate (Science)',institute:'Netarhat Vidyalaya',detail:''},
+    {year:'2017',degree:'Matriculation',institute:'S.B.V.M. High School, Gaya',detail:''},
+  ];
+}
+function renderEduList(data) {
+  const list=document.getElementById('edu-list'); list.innerHTML='';
+  data.forEach((item,i) => {
+    const div=document.createElement('div'); div.className='admin-card-item';
+    div.innerHTML=`<button class="admin-remove" onclick="removeEduItem(${i})">✕ REMOVE</button>
+      <div class="admin-grid-2"><div class="admin-group" style="margin:0"><label class="admin-label">Year</label><input class="admin-input edu-year" value="${item.year||''}"></div>
+      <div class="admin-group" style="margin:0"><label class="admin-label">Degree / Course</label><input class="admin-input edu-degree" value="${item.degree||''}"></div></div>
+      <div class="admin-group" style="margin-top:0.5rem;margin-bottom:0.5rem"><label class="admin-label">Institute</label><input class="admin-input edu-institute" value="${item.institute||''}"></div>
+      <div class="admin-group" style="margin:0"><label class="admin-label">Extra Detail (score, grade, etc.)</label><input class="admin-input edu-detail" value="${item.detail||''}"></div>`;
+    list.appendChild(div);
+  });
+}
+function addEduItem() { const i=getEduItems(); i.push({year:'',degree:'',institute:'',detail:''}); renderEduList(i); document.getElementById('edu-list').lastElementChild?.scrollIntoView({behavior:'smooth'}); }
+function removeEduItem(i) { const items=getEduItems(); items.splice(i,1); renderEduList(items); }
+function getEduItems() { return [...document.querySelectorAll('#edu-list .admin-card-item')].map(c=>({year:c.querySelector('.edu-year').value,degree:c.querySelector('.edu-degree').value,institute:c.querySelector('.edu-institute').value,detail:c.querySelector('.edu-detail').value})); }
+function saveEdu(e) { const items=getEduItems(); saveData({education:items}); renderEduOnPage(items); flashSaved(e.target); }
+function renderEduOnPage(items) {
+  const g=document.querySelector('.edu-grid'); if(!g) return;
+  g.innerHTML=items.map(item=>`<div class="edu-card"><div class="edu-year">${item.year}</div><div class="edu-degree">${item.degree}</div><div class="edu-inst">${item.institute}</div>${item.detail?`<div style="color:var(--cyan);font-size:0.8rem;margin-top:0.3rem">${item.detail}</div>`:''}</div>`).join('');
+}
+
+// ---- Override typing roles ----
+const _origTypeRole = typeRole;
+window.typeRole = function() {
+  if(window._customRoles) window.roles = window._customRoles;
+  _origTypeRole();
+};
+
+// ---- Init ----
+window.addEventListener('DOMContentLoaded', () => { initAuth(); applyAllData(); });
+window.addEventListener('keydown', e => {
+  if(e.key === 'Escape') {
+    closeAdmin();
+    closeLogin();
+    closeChangePw();
+  }
+});
+</script>
+
 </body>
 </html>
