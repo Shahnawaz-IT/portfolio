@@ -12,7 +12,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Md Shahnawaz — IT Engineer Portfolio">
 <meta name="theme-color" content="#00d4ff">
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #020b18;
@@ -42,7 +41,7 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     overflow-x: hidden;
     cursor: default;
   }
@@ -66,11 +65,11 @@
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
-  .nav-logo { font-family: 'Share Tech Mono', monospace; color: var(--cyan); font-size: 1.1rem; letter-spacing: 0.15em; }
+  .nav-logo { font-family: Consolas, monospace; color: var(--cyan); font-size: 1.1rem; letter-spacing: 0.15em; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-family: 'Rajdhani', sans-serif; font-weight: 600; color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; }
+  .nav-links a { font-family: 'Segoe UI', sans-serif; font-weight: 600; color: var(--muted); text-decoration: none; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--cyan); }
-  .nav-badge { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--green); border: 1px solid var(--green); padding: 0.2rem 0.6rem; border-radius: 2px; animation: blink 2s infinite; }
+  .nav-badge { font-family: Consolas, monospace; font-size: 0.7rem; color: var(--green); border: 1px solid var(--green); padding: 0.2rem 0.6rem; border-radius: 2px; animation: blink 2s infinite; }
   @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
   /* HERO */
@@ -81,10 +80,10 @@
     position: relative;
   }
   .hero-inner { max-width: 1200px; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .hero-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .hero-tag { font-family: Consolas, monospace; font-size: 0.75rem; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
   .hero-tag::before { content: ''; width: 30px; height: 1px; background: var(--cyan); }
   .hero-name {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 700;
     line-height: 0.95;
@@ -94,7 +93,7 @@
   }
   .hero-name span { background: linear-gradient(135deg, var(--cyan), var(--cyan2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; }
   .hero-role {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Consolas, monospace;
     font-size: 1rem;
     color: var(--cyan2);
     margin: 1.5rem 0 1rem;
@@ -110,15 +109,15 @@
   .hero-desc { color: var(--muted); line-height: 1.8; font-size: 0.95rem; max-width: 480px; margin-bottom: 2rem; }
   .hero-stats { display: flex; gap: 2rem; margin: 2rem 0; }
   .stat { text-align: center; }
-  .stat-num { font-family: 'Rajdhani', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--cyan); line-height: 1; }
+  .stat-num { font-family: 'Segoe UI', sans-serif; font-size: 2.5rem; font-weight: 700; color: var(--cyan); line-height: 1; }
   .stat-label { font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.2rem; }
   .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary {
-    padding: 0.8rem 2rem; background: var(--cyan); color: var(--bg); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition: all 0.3s; text-decoration: none; display: inline-block;
+    padding: 0.8rem 2rem; background: var(--cyan); color: var(--bg); font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer; clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition: all 0.3s; text-decoration: none; display: inline-block;
   }
   .btn-primary:hover { background: var(--cyan2); transform: translateY(-2px); }
   .btn-outline {
-    padding: 0.8rem 2rem; background: transparent; color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--cyan); cursor: pointer; clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition: all 0.3s; text-decoration: none; display: inline-block;
+    padding: 0.8rem 2rem; background: transparent; color: var(--cyan); font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--cyan); cursor: pointer; clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition: all 0.3s; text-decoration: none; display: inline-block;
   }
   .btn-outline:hover { background: rgba(0,212,255,0.1); transform: translateY(-2px); }
 
@@ -159,11 +158,11 @@
     overflow: hidden;
   }
   .card-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-  .card-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.4rem; text-align: center; color: var(--white); letter-spacing: 0.05em; }
-  .card-title { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--cyan); text-align: center; letter-spacing: 0.15em; margin: 0.3rem 0 1rem; }
+  .card-name { font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 1.4rem; text-align: center; color: var(--white); letter-spacing: 0.05em; }
+  .card-title { font-family: Consolas, monospace; font-size: 0.7rem; color: var(--cyan); text-align: center; letter-spacing: 0.15em; margin: 0.3rem 0 1rem; }
   .card-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--cyan), transparent); margin: 0.8rem 0; }
   .card-info { font-size: 0.75rem; color: var(--muted); line-height: 2; }
-  .card-info span { color: var(--cyan); font-family: 'Share Tech Mono', monospace; }
+  .card-info span { color: var(--cyan); font-family: Consolas, monospace; }
   .card-bar { margin-top: 0.6rem; }
   .card-bar-label { display: flex; justify-content: space-between; font-size: 0.65rem; color: var(--muted); margin-bottom: 0.2rem; }
   .card-bar-track { height: 3px; background: rgba(0,212,255,0.1); border-radius: 2px; overflow: hidden; }
@@ -172,9 +171,9 @@
 
   /* SECTION BASE */
   section { padding: 5rem 3rem; max-width: 1200px; margin: 0 auto; position: relative; width: 100%; }
-  .section-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+  .section-tag { font-family: Consolas, monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
   .section-tag::before { content: '//'; color: var(--muted); }
-  .section-title { font-family: 'Rajdhani', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,212,255,0.08); }
+  .section-title { font-family: 'Segoe UI', sans-serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 3rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(0,212,255,0.08); }
   .section-title span { color: var(--cyan); }
 
   /* SKILLS */
@@ -191,17 +190,17 @@
   .skill-card:hover::before { transform: scaleX(1); }
   .skill-card:hover { border-color: rgba(0,212,255,0.5); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,212,255,0.12), inset 0 0 30px rgba(0,212,255,0.03); }
   .skill-icon { font-size: 2rem; margin-bottom: 0.8rem; }
-  .skill-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem; }
+  .skill-name { font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 0.5rem; }
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
-  .skill-tag { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--cyan2); border: 1px solid rgba(0,255,204,0.25); padding: 0.15rem 0.5rem; letter-spacing: 0.05em; }
+  .skill-tag { font-family: Consolas, monospace; font-size: 0.6rem; color: var(--cyan2); border: 1px solid rgba(0,255,204,0.25); padding: 0.15rem 0.5rem; letter-spacing: 0.05em; }
 
   /* EXPERIENCE */
   .exp-timeline { position: relative; padding-left: 2rem; }
   .exp-timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, var(--cyan), transparent); }
   .exp-item { position: relative; margin-bottom: 3rem; padding-left: 2rem; }
   .exp-item::before { content: ''; position: absolute; left: -2.45rem; top: 0.4rem; width: 10px; height: 10px; background: var(--cyan); border: 2px solid var(--bg); border-radius: 50%; box-shadow: 0 0 10px var(--cyan); }
-  .exp-period { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
-  .exp-role { font-family: 'Rajdhani', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--white); }
+  .exp-period { font-family: Consolas, monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+  .exp-role { font-family: 'Segoe UI', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--white); }
   .exp-company { color: var(--cyan2); font-size: 0.85rem; margin-bottom: 1rem; font-weight: 500; }
   .exp-card { background: var(--card); border: 1px solid var(--border); padding: 1.5rem; margin-top: 1rem; }
   .exp-points { list-style: none; }
@@ -224,8 +223,8 @@
   .cert-card:hover { border-color: rgba(0,212,255,0.4); transform: translateX(4px); }
   .cert-emoji { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
   .cert-text { flex: 1; }
-  .cert-name { font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--white); line-height: 1.3; margin-bottom: 0.2rem; }
-  .cert-issuer { font-size: 0.7rem; color: var(--muted); font-family: 'Share Tech Mono', monospace; letter-spacing: 0.05em; }
+  .cert-name { font-family: 'Segoe UI', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--white); line-height: 1.3; margin-bottom: 0.2rem; }
+  .cert-issuer { font-size: 0.7rem; color: var(--muted); font-family: Consolas, monospace; letter-spacing: 0.05em; }
 
   /* EDUCATION */
   .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
@@ -237,10 +236,10 @@
     transition: all 0.3s;
   }
   .edu-card:hover { border-color: var(--cyan); box-shadow: 0 0 30px rgba(0,212,255,0.1); transform: translateY(-4px); }
-  .edu-year { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; }
-  .edu-degree { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--white); margin: 0.4rem 0 0.2rem; }
+  .edu-year { font-family: Consolas, monospace; font-size: 0.7rem; color: var(--cyan); letter-spacing: 0.1em; }
+  .edu-degree { font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--white); margin: 0.4rem 0 0.2rem; }
   .edu-inst { color: var(--muted); font-size: 0.8rem; }
-  .edu-score { font-family: 'Rajdhani', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--cyan); margin-top: 0.8rem; }
+  .edu-score { font-family: 'Segoe UI', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--cyan); margin-top: 0.8rem; }
   .edu-score span { font-size: 0.8rem; color: var(--muted); }
 
   /* CONTACT */
@@ -248,17 +247,17 @@
   .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--border); background: var(--card); margin-bottom: 1rem; transition: all 0.3s; }
   .contact-item:hover { border-color: var(--cyan); transform: translateX(6px); }
   .contact-icon { font-size: 1.5rem; width: 2.5rem; text-align: center; }
-  .contact-label { font-size: 0.7rem; color: var(--muted); font-family: 'Share Tech Mono', monospace; letter-spacing: 0.08em; display: block; margin-bottom: 0.2rem; }
+  .contact-label { font-size: 0.7rem; color: var(--muted); font-family: Consolas, monospace; letter-spacing: 0.08em; display: block; margin-bottom: 0.2rem; }
   .contact-value { color: var(--white); font-size: 0.9rem; font-weight: 500; }
   .contact-value a { color: var(--cyan); text-decoration: none; }
   .personal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
   .personal-item { background: var(--card); border: 1px solid var(--border); padding: 0.8rem 1rem; }
-  .personal-key { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; display: block; margin-bottom: 0.2rem; }
+  .personal-key { font-family: Consolas, monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; display: block; margin-bottom: 0.2rem; }
   .personal-val { color: var(--white); font-size: 0.8rem; }
 
   /* LANGUAGES */
   .lang-row { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 1rem; }
-  .lang-pill { background: var(--card); border: 1px solid var(--border); padding: 0.6rem 1.5rem; font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.9rem; color: var(--white); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.5rem; }
+  .lang-pill { background: var(--card); border: 1px solid var(--border); padding: 0.6rem 1.5rem; font-family: 'Segoe UI', sans-serif; font-weight: 600; font-size: 0.9rem; color: var(--white); letter-spacing: 0.08em; display: flex; align-items: center; gap: 0.5rem; }
   .lang-pill span { color: var(--cyan); font-size: 1.2rem; }
 
   /* FOOTER */
@@ -276,7 +275,7 @@
     border-top: none;
     text-align: center;
     padding: 2rem;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Consolas, monospace;
     font-size: 0.7rem;
     color: var(--muted);
     letter-spacing: 0.1em;
@@ -337,11 +336,12 @@
   }
   .gal-item img {
     width: 100%; height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: top center;
     transition: transform 0.5s ease, filter 0.3s;
     filter: brightness(0.85) saturate(0.9);
   }
-  .gal-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.1); }
+  .gal-item:hover img { transform: none; filter: brightness(1) saturate(1.1); }
   .gal-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 50%);
@@ -350,7 +350,7 @@
   }
   .gal-item:hover .gal-overlay { opacity: 1; }
   .gal-cap {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Consolas, monospace;
     font-size: 0.65rem; color: var(--cyan2);
     letter-spacing: 0.05em; line-height: 1.4;
   }
@@ -366,8 +366,8 @@
     display: flex; flex-direction: column; align-items: center;
   }
   .lb-inner img { max-width: 85vw; max-height: 75vh; object-fit: contain; border: 1px solid var(--border); }
-  #lbCap { font-family: 'Share Tech Mono', monospace; font-size: 0.7rem; color: var(--cyan2); margin-top: 0.8rem; text-align: center; max-width: 600px; }
-  #lbCount { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 0.3rem; }
+  #lbCap { font-family: Consolas, monospace; font-size: 0.7rem; color: var(--cyan2); margin-top: 0.8rem; text-align: center; max-width: 600px; }
+  #lbCount { font-family: Consolas, monospace; font-size: 0.65rem; color: var(--muted); margin-top: 0.3rem; }
   .lb-close { position: absolute; top: -2rem; right: 0; background: none; border: 1px solid var(--border); color: var(--cyan); font-size: 1rem; cursor: pointer; padding: 0.2rem 0.6rem; }
   .lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,212,255,0.1); border: 1px solid var(--border); color: var(--cyan); font-size: 2rem; cursor: pointer; padding: 0.2rem 0.6rem; transition: background 0.2s; z-index: 10; }
   .lb-prev { left: -3rem; }
@@ -397,11 +397,11 @@
   }
   .exp-letter-badge { display: flex; gap: 1rem; align-items: center; }
   .elb-icon { font-size: 2.5rem; flex-shrink: 0; }
-  .elb-title { font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
-  .elb-sub { font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--muted); margin-top: 0.2rem; letter-spacing: 0.08em; }
+  .elb-title { font-family: 'Segoe UI', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--white); letter-spacing: 0.05em; }
+  .elb-sub { font-family: Consolas, monospace; font-size: 0.65rem; color: var(--muted); margin-top: 0.2rem; letter-spacing: 0.08em; }
   .exp-letter-meta { display: flex; flex-direction: column; gap: 0.5rem; }
   .elm-item { display: flex; gap: 0.5rem; align-items: flex-start; }
-  .elm-key { font-family: 'Share Tech Mono', monospace; font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.1em; min-width: 110px; flex-shrink: 0; padding-top: 0.1rem; }
+  .elm-key { font-family: Consolas, monospace; font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.1em; min-width: 110px; flex-shrink: 0; padding-top: 0.1rem; }
   .elm-val { font-size: 0.8rem; color: var(--text); }
   .exp-letter-img-wrap {
     position: relative;
@@ -426,7 +426,7 @@
   }
   .exp-letter-img:hover { border-color: var(--cyan); box-shadow: 0 0 30px rgba(0,212,255,0.2); }
   .exp-letter-zoom-hint {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Consolas, monospace;
     font-size: 0.65rem;
     color: var(--muted);
     margin-top: 0.8rem;
@@ -452,7 +452,7 @@
     box-shadow: 0 0 60px rgba(0,212,255,0.15);
   }
   .elv-close {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Consolas, monospace;
     font-size: 0.7rem;
     color: var(--cyan);
     margin-top: 1rem;
@@ -471,7 +471,7 @@
   .hl { color: var(--cyan); font-weight: 600; }
   .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
   .at {
-    font-family: 'Share Tech Mono', monospace;
+    font-family: Consolas, monospace;
     font-size: 0.65rem; color: var(--cyan2);
     border: 1px solid rgba(0,255,204,0.2);
     padding: 0.3rem 0.8rem;
@@ -492,7 +492,7 @@
   .ast-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; background: linear-gradient(180deg, var(--blue), var(--cyan)); }
   .ast-card:hover { border-color: rgba(0,212,255,0.4); transform: translateX(4px); }
   .ast-icon { font-size: 1.6rem; flex-shrink: 0; }
-  .ast-num { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; color: var(--cyan); line-height: 1; }
+  .ast-num { font-family: 'Segoe UI', sans-serif; font-size: 2rem; font-weight: 700; color: var(--cyan); line-height: 1; }
   .ast-label { font-size: 0.72rem; color: var(--muted); margin-top: 0.15rem; }
   @media(max-width:768px){ .about-grid { grid-template-columns: 1fr; } .about-stats-col { flex-direction: row; flex-wrap: wrap; } .ast-card { flex: 1; min-width: 140px; } }
 
@@ -595,7 +595,7 @@
   color: #7bbcd5;
   border: 1px solid rgba(0,212,255,0.45);
   padding: 0.5rem 1.1rem;
-  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem;
+  font-family: Consolas, monospace; font-size: 0.65rem;
   letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer;
   opacity: 0.85; transition: all 0.3s; border-radius: 3px;
   backdrop-filter: blur(10px);
@@ -626,20 +626,20 @@
   content: ''; position: absolute; top: -1px; left: 20%; right: 20%; height: 2px;
   background: linear-gradient(90deg, transparent, var(--cyan), transparent);
 }
-.login-logo { font-family: 'Share Tech Mono', monospace; color: var(--cyan); font-size: 0.7rem; letter-spacing: 0.25em; text-align: center; margin-bottom: 0.3rem; }
-.login-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--white); text-align: center; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
-.login-sub { font-size: 0.72rem; color: var(--muted); text-align: center; margin-bottom: 2rem; font-family: 'Share Tech Mono', monospace; }
+.login-logo { font-family: Consolas, monospace; color: var(--cyan); font-size: 0.7rem; letter-spacing: 0.25em; text-align: center; margin-bottom: 0.3rem; }
+.login-title { font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--white); text-align: center; letter-spacing: 0.05em; margin-bottom: 0.3rem; }
+.login-sub { font-size: 0.72rem; color: var(--muted); text-align: center; margin-bottom: 2rem; font-family: Consolas, monospace; }
 .login-field { margin-bottom: 1rem; }
-.login-field label { display: block; font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.15em; margin-bottom: 0.4rem; }
+.login-field label { display: block; font-family: Consolas, monospace; font-size: 0.65rem; color: var(--cyan); letter-spacing: 0.15em; margin-bottom: 0.4rem; }
 .login-field input {
   width: 100%; background: rgba(0,0,0,0.5); border: 1px solid var(--border);
-  color: var(--white); padding: 0.7rem 1rem; font-family: 'Share Tech Mono', monospace;
+  color: var(--white); padding: 0.7rem 1rem; font-family: Consolas, monospace;
   font-size: 0.9rem; border-radius: 2px; outline: none; transition: border 0.2s; letter-spacing: 0.1em;
 }
 .login-field input:focus { border-color: var(--cyan); box-shadow: 0 0 10px rgba(0,212,255,0.1); }
 .login-btn {
   width: 100%; background: var(--cyan); color: var(--bg); border: none;
-  padding: 0.85rem; font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  padding: 0.85rem; font-family: 'Segoe UI', sans-serif; font-weight: 700;
   font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer;
   clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%); transition: all 0.3s;
   margin-top: 0.5rem;
@@ -649,15 +649,15 @@
 .login-error {
   background: rgba(255,60,60,0.1); border: 1px solid rgba(255,60,60,0.3);
   color: #ff6b6b; padding: 0.6rem 1rem; border-radius: 2px; font-size: 0.75rem;
-  font-family: 'Share Tech Mono', monospace; margin-top: 0.8rem; text-align: center;
+  font-family: Consolas, monospace; margin-top: 0.8rem; text-align: center;
   display: none;
 }
 .login-error.show { display: block; }
-.login-attempts { text-align: center; font-size: 0.65rem; color: var(--muted); font-family: 'Share Tech Mono', monospace; margin-top: 0.8rem; }
+.login-attempts { text-align: center; font-size: 0.65rem; color: var(--muted); font-family: Consolas, monospace; margin-top: 0.8rem; }
 .login-locked {
   background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3);
   color: var(--orange); padding: 1rem; border-radius: 2px; text-align: center;
-  font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; line-height: 1.8; display: none;
+  font-family: Consolas, monospace; font-size: 0.75rem; line-height: 1.8; display: none;
 }
 .login-locked.show { display: block; }
 .login-close-x {
@@ -678,28 +678,28 @@
   background: rgba(4,18,37,0.9); border: 1px solid rgba(0,212,255,0.3);
   border-radius: 6px; padding: 2rem; position: relative;
 }
-#adminPanel h2 { font-family: 'Share Tech Mono', monospace; color: var(--cyan); font-size: 1.1rem; letter-spacing: 0.2em; }
-#adminPanel .admin-sub { font-size: 0.72rem; color: var(--muted); margin-bottom: 1.5rem; font-family: 'Share Tech Mono', monospace; margin-top: 0.3rem; }
+#adminPanel h2 { font-family: Consolas, monospace; color: var(--cyan); font-size: 1.1rem; letter-spacing: 0.2em; }
+#adminPanel .admin-sub { font-size: 0.72rem; color: var(--muted); margin-bottom: 1.5rem; font-family: Consolas, monospace; margin-top: 0.3rem; }
 .admin-close {
   background: transparent; border: 1px solid var(--border); color: var(--muted);
-  padding: 0.3rem 0.8rem; cursor: pointer; font-family: 'Rajdhani', sans-serif;
+  padding: 0.3rem 0.8rem; cursor: pointer; font-family: 'Segoe UI', sans-serif;
   font-weight: 700; font-size: 0.8rem; letter-spacing: 0.1em; transition: all 0.2s;
 }
 .admin-close:hover { border-color: var(--cyan); color: var(--cyan); }
 .admin-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
 .admin-tab {
   padding: 0.45rem 1rem; background: transparent; border: 1px solid var(--border); color: var(--muted);
-  font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 0.78rem;
+  font-family: 'Segoe UI', sans-serif; font-weight: 600; font-size: 0.78rem;
   letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s;
 }
 .admin-tab:hover, .admin-tab.active { background: rgba(0,212,255,0.1); border-color: var(--cyan); color: var(--cyan); }
 .admin-section { display: none; }
 .admin-section.active { display: block; }
 .admin-group { margin-bottom: 1.4rem; }
-.admin-label { font-family: 'Share Tech Mono', monospace; font-size: 0.68rem; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+.admin-label { font-family: Consolas, monospace; font-size: 0.68rem; color: var(--cyan); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
 .admin-input, .admin-textarea {
   width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border);
-  color: var(--text); padding: 0.6rem 0.9rem; font-family: 'Inter', sans-serif;
+  color: var(--text); padding: 0.6rem 0.9rem; font-family: 'Segoe UI', sans-serif;
   font-size: 0.88rem; border-radius: 2px; outline: none; transition: border 0.2s;
 }
 .admin-input:focus, .admin-textarea:focus { border-color: var(--cyan); }
@@ -712,21 +712,21 @@
   position: absolute; top: 0.7rem; right: 0.7rem;
   background: rgba(255,60,60,0.15); border: 1px solid rgba(255,60,60,0.3);
   color: #ff6b6b; padding: 0.2rem 0.6rem; font-size: 0.68rem;
-  cursor: pointer; font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  cursor: pointer; font-family: 'Segoe UI', sans-serif; font-weight: 700;
   letter-spacing: 0.05em; border-radius: 2px; transition: all 0.2s;
 }
 .admin-card-item .admin-remove:hover { background: rgba(255,60,60,0.3); }
 .admin-add-btn {
   background: rgba(0,212,255,0.06); border: 1px dashed rgba(0,212,255,0.25);
   color: var(--cyan); padding: 0.65rem; width: 100%; cursor: pointer;
-  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.82rem;
+  font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.82rem;
   letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s;
   border-radius: 2px; margin-top: 0.5rem;
 }
 .admin-add-btn:hover { background: rgba(0,212,255,0.14); border-color: var(--cyan); }
 .admin-save-btn {
   background: var(--cyan); color: var(--bg); border: none; padding: 0.8rem 2rem;
-  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.9rem;
+  font-family: 'Segoe UI', sans-serif; font-weight: 700; font-size: 0.9rem;
   letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
   clip-path: polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
   transition: all 0.3s; width: 100%; margin-top: 1.5rem;
@@ -736,7 +736,7 @@
 .photo-preview-area { display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem; }
 .photo-preview-area img { width: 70px; height: 70px; border-radius: 50%; border: 2px solid var(--cyan); object-fit: cover; }
 .no-photo { width: 70px; height: 70px; border-radius: 50%; border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--muted); }
-.admin-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.4rem; font-family: 'Share Tech Mono', monospace; }
+.admin-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.4rem; font-family: Consolas, monospace; }
 .admin-divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
 @media(max-width:600px){
   #adminPanel { padding: 1.2rem 1rem; }
@@ -754,6 +754,74 @@
   .float-wa { bottom: 1.2rem; left: 1rem; width: 44px; height: 44px; }
   .login-box { width: 92vw; padding: 1.8rem 1.3rem; }
 }
+</style>
+
+<style>
+/* 2026 IT operations portfolio refinement */
+:root{--bg:#05080d;--bg2:#090f17;--cyan:#29d3ff;--cyan2:#59f0bd;--blue:#3b82f6;--glow:rgba(41,211,255,.12);--card:rgba(10,18,28,.88);--border:rgba(139,180,201,.16);--text:#c8d5df;--muted:#7f95a6;--white:#f4f8fb;--orange:#ff9f43;--green:#55e59d}
+body{background:var(--bg);background-image:linear-gradient(180deg,rgba(15,26,39,.28),transparent 32rem);font-family:'Segoe UI',sans-serif}
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(135,170,192,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(135,170,192,.026) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent 70%)}
+.grid-bg{opacity:.55;background-size:84px 84px}.scanline{opacity:.3}.page-glow-top{height:460px;background:radial-gradient(ellipse at 50% 0%,rgba(41,211,255,.09),transparent 70%)}
+nav{height:70px;padding:.85rem max(2rem,calc((100vw - 1240px)/2));background:rgba(5,8,13,.88);border-bottom:1px solid var(--border);box-shadow:0 12px 40px rgba(0,0,0,.24)}
+.nav-logo{font-size:.9rem;font-weight:700;letter-spacing:.12em}.nav-logo::before{content:'●';font-size:.55rem;margin-right:.65rem;color:var(--green);text-shadow:0 0 12px var(--green)}
+.nav-links{gap:1.35rem}.nav-links a{font-size:.72rem;letter-spacing:.1em}.nav-badge{border-color:rgba(85,229,157,.35);background:rgba(85,229,157,.06);padding:.35rem .65rem;border-radius:3px}
+.hero{min-height:calc(100vh - 20px);padding-top:8.5rem;padding-bottom:6rem}.hero::before{content:'INFRASTRUCTURE / SYSTEMS / SUPPORT';position:absolute;right:3rem;top:9rem;color:rgba(127,149,166,.24);font:600 .62rem Consolas;letter-spacing:.18em;writing-mode:vertical-rl}
+.hero-inner{max-width:1240px;grid-template-columns:minmax(0,1.22fr) minmax(310px,.78fr);gap:6rem}.hero-tag{font-size:.68rem;color:var(--green);margin-bottom:1.5rem}.hero-name{font-size:clamp(4rem,7.5vw,7rem);letter-spacing:0;line-height:.86;text-shadow:0 18px 60px rgba(0,0,0,.45)}.hero-name span{background:linear-gradient(100deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text}.hero-role{border:0;animation:none;font-size:.86rem;background:rgba(41,211,255,.05);border-left:2px solid var(--cyan);padding:.7rem .85rem;margin:1.8rem 0}.hero-desc{max-width:680px;font-size:.94rem;line-height:1.85;color:#94a8b7}.hero-stats{gap:0;margin:2.25rem 0;border-block:1px solid var(--border);max-width:650px}.stat{min-width:120px;text-align:left;padding:1rem 1.4rem 1rem 0;margin-right:1.4rem;border-right:1px solid var(--border)}.stat-num{font-size:2.1rem;text-shadow:none}.stat-label{font-size:.61rem}.hero-btns{margin-top:.25rem}.btn-primary,.btn-outline{clip-path:none;border-radius:3px;padding:.82rem 1.35rem;font-size:.78rem}.btn-primary{box-shadow:0 10px 34px rgba(41,211,255,.18)}
+.hero-card-inner{width:360px;min-height:0;padding:2rem;background:linear-gradient(145deg,rgba(14,26,39,.96),rgba(7,13,21,.94));border-color:rgba(41,211,255,.28);box-shadow:0 35px 100px rgba(0,0,0,.48),inset 0 1px rgba(255,255,255,.03);animation:float3d 8s ease-in-out infinite}.hero-card-inner::before{content:'IDENTITY // VERIFIED';display:block;font:600 .6rem Consolas;color:var(--green);letter-spacing:.14em;margin-bottom:1.3rem}.card-photo{width:92px;height:92px;border-radius:5px;background:rgba(41,211,255,.08);box-shadow:none}.card-photo img{border-radius:3px}.card-name{font-size:1.7rem;letter-spacing:0}.card-title{font-size:.64rem}.card-info{line-height:2.15}.card-bar-track{height:4px}
+section{max-width:1240px;padding:6.5rem 2.5rem;border-bottom:1px solid rgba(139,180,201,.08)}.section-tag{font-size:.65rem;color:var(--green)}.section-title{font-size:clamp(2.5rem,4.5vw,4.2rem);letter-spacing:0;border:0;margin-bottom:3.25rem;position:relative}.section-title::after{content:'';display:block;width:48px;height:2px;background:var(--cyan);margin-top:1rem}
+.about-grid{grid-template-columns:minmax(0,1fr) 360px;gap:5rem}.about-para{color:#a8b8c5}.ast-card,.skill-card,.cert-card,.edu-card,.exp-card,.contact-item,.personal-item,.exp-letter-card{background:linear-gradient(145deg,rgba(12,22,33,.9),rgba(8,14,22,.86));border-color:var(--border);box-shadow:0 14px 40px rgba(0,0,0,.16)}
+.skills-grid{grid-template-columns:repeat(3,1fr);gap:1rem}.skill-card{min-height:220px;padding:1.65rem;border-radius:4px}.skill-card:hover{transform:translateY(-3px);box-shadow:0 24px 60px rgba(0,0,0,.3);border-color:rgba(41,211,255,.42)}.skill-icon,.cert-emoji,.ast-icon,.contact-icon{filter:saturate(.75)}.skill-name{font-size:1.25rem}.skill-tag,.at{border-radius:2px;background:rgba(89,240,189,.035)}
+.exp-timeline{padding-left:2.5rem}.exp-timeline::before{background:linear-gradient(var(--cyan),rgba(41,211,255,.06))}.exp-item{padding-left:2.4rem;margin-bottom:4rem}.exp-item::before{left:-2.83rem;width:12px;height:12px;box-shadow:0 0 0 6px rgba(41,211,255,.07),0 0 18px rgba(41,211,255,.45)}.exp-period{font-size:.66rem}.exp-role{font-size:1.85rem}.exp-card{padding:1.8rem;border-radius:4px}.exp-points li{padding:.48rem 0 .48rem 1.3rem;color:#aebdca}
+.certs-grid{grid-template-columns:repeat(3,1fr)}.cert-card{min-height:92px;border-radius:4px}.edu-grid{grid-template-columns:repeat(4,1fr)}.edu-card{border-radius:4px;min-height:170px}.edu-year{color:var(--green)}
+.gallery-grid{grid-template-columns:repeat(3,1fr);gap:1rem}.gal-item{border-radius:4px}.gal-item img{filter:brightness(.8) saturate(.75)}.gal-overlay{opacity:1;background:linear-gradient(0deg,rgba(5,8,13,.94),transparent 65%)}
+.contact-grid{gap:5rem}.contact-item{border-radius:4px}.personal-item{border-radius:4px}.lang-pill{border-radius:3px;background:rgba(12,22,33,.86)}
+footer{padding:3rem;background:rgba(5,8,13,.7)}
+@media(max-width:1050px){.nav-badge{display:none}.skills-grid,.certs-grid{grid-template-columns:repeat(2,1fr)}.hero-inner{gap:2rem}.hero-name{font-size:clamp(3.4rem,7vw,5.5rem)}}
+@media(max-width:768px){nav{height:62px;padding:.8rem 1rem}.hamburger{display:flex}.hero{padding:7rem 1.25rem 4rem}.hero::before{display:none}.hero-inner{grid-template-columns:1fr;text-align:left}.hero-tag,.hero-btns,.hero-stats{justify-content:flex-start}.hero-desc{margin-left:0;margin-right:0}.hero-name{font-size:clamp(3.15rem,16vw,4.7rem)}.hero-role{font-size:.72rem;white-space:normal}.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);width:100%}.stat{min-width:0;margin-right:.7rem;padding-right:.7rem}.hero-card{margin-top:2.5rem}.hero-card-inner{width:100%;max-width:360px}.about-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}.skills-grid,.certs-grid,.edu-grid,.gallery-grid{grid-template-columns:1fr}section{padding:4.5rem 1.25rem}.section-title{font-size:2.7rem}.about-stats-col{display:grid;grid-template-columns:1fr 1fr}.exp-role{font-size:1.45rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+
+<style id="industrial-redesign">
+/* Industrial Neo-Brutalist — Graphite/Cyan dual theme */
+:root{--bg:#071018;--bg2:#0b1722;--card:#0f1d29;--border:#29404f;--text:#b9cbd7;--muted:#708999;--white:#e8f2f7;--cyan:#22d3ee;--cyan2:#67e8f9;--blue:#0891b2;--green:#55e59d;--orange:#f6b73c;--hard-shadow:#02070b;--panel-soft:#0a151f}
+body.light-mode{--bg:#e8f2f7;--bg2:#d8e7ee;--card:#f7fbfd;--border:#7894a4;--text:#243945;--muted:#516b7a;--white:#071018;--cyan:#007d96;--cyan2:#00687d;--blue:#036b82;--green:#087b55;--orange:#a55c00;--hard-shadow:#7894a4;--panel-soft:#dce9ef}
+*{border-radius:0!important}html{scroll-padding-top:78px}body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Arial,sans-serif;transition:background .25s,color .25s}body::before{background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:64px 64px;opacity:.09;mask-image:none}.grid-bg,.scanline,.page-glow-top,#canvas3d{display:none!important}
+nav{height:72px;padding:0 max(1.5rem,calc((100vw - 1240px)/2));background:var(--bg);border-bottom:4px solid var(--border);box-shadow:none}.nav-logo{font-family:'Segoe UI',Arial,sans-serif;font-size:1rem;font-weight:700;color:var(--white);letter-spacing:0}.nav-logo::before{content:'MS';display:inline-grid;place-items:center;width:30px;height:30px;margin-right:.7rem;background:var(--cyan);color:var(--bg);font:700 .7rem 'Segoe UI'}.nav-links{gap:0;height:100%}.nav-links li{display:flex}.nav-links a{display:flex;align-items:center;padding:0 .75rem;border-left:1px solid var(--border);font:700 .62rem 'Segoe UI';letter-spacing:.08em;color:var(--muted)}.nav-links a:hover{background:var(--card);color:var(--cyan)}.nav-links a::after{display:none}.nav-badge{animation:none;border:0;background:none;color:var(--green);font-size:.62rem}.nav-badge::before{content:'';display:inline-block;width:7px;height:7px;margin-right:.5rem;background:var(--green);animation:blink 1.8s infinite}.theme-toggle{width:38px;height:38px;margin-left:.75rem;border:2px solid var(--border);background:var(--card);color:var(--white);font-size:1rem;cursor:pointer;display:grid;place-items:center}.theme-toggle:hover{border-color:var(--cyan);color:var(--cyan)}
+.hero{min-height:auto;padding:8.5rem 2.5rem 5rem}.hero::before{display:none}.hero-inner{max-width:1240px;display:grid;grid-template-columns:7fr 5fr;gap:0;align-items:stretch;border:4px solid var(--border);background:var(--card);box-shadow:16px 16px 0 var(--hard-shadow)}.hero-inner::before{content:'SYSTEM.IDENTITY.PROFILE // BUILD 2026.09';position:absolute;top:0;left:0;right:0;height:48px;border-bottom:4px solid var(--border);padding:0 1.25rem;display:flex;align-items:center;font:700 .62rem 'Segoe UI';letter-spacing:.12em;color:var(--muted);background:var(--panel-soft)}.hero> .hero-inner{padding-top:48px}.hero-inner>div:first-child{padding:4rem;border-right:4px solid var(--border);display:flex;flex-direction:column;justify-content:center}.hero-tag{font-family:'Segoe UI';font-size:.72rem;font-weight:700;color:var(--cyan);letter-spacing:.18em;margin-bottom:1.3rem}.hero-tag::before{display:none}.hero-name{font-family:'Segoe UI';font-size:clamp(4rem,7vw,7rem);font-weight:700;line-height:.82;color:var(--white);letter-spacing:0;text-shadow:none}.hero-name span{display:block;background:none;-webkit-text-fill-color:var(--white);color:var(--white)}.hero-role{font-family:'Segoe UI';font-size:.76rem;font-weight:700;letter-spacing:.1em;border:0;border-left:5px solid var(--cyan);background:var(--panel-soft);padding:.75rem 1rem;margin:1.6rem 0;color:var(--cyan);animation:none}.hero-desc{max-width:650px;font-size:1rem;line-height:1.7;color:var(--text);margin-bottom:1.5rem}.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:1rem 0 1.75rem;border:2px solid var(--border);max-width:620px}.stat{padding:1rem;text-align:left;border-right:2px solid var(--border)}.stat:last-child{border:0}.stat-num{font-family:'Segoe UI';font-size:2rem;color:var(--cyan);text-shadow:none}.stat-label{font-size:.58rem}.hero-btns{gap:.75rem}.btn-primary,.btn-outline{font:700 .7rem 'Segoe UI';padding:.9rem 1.25rem;clip-path:none;border:2px solid var(--cyan);box-shadow:4px 4px 0 var(--hard-shadow)}.btn-primary:hover,.btn-outline:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--hard-shadow)}
+.hero-card{background:var(--panel-soft);padding:3rem;perspective:none;display:flex}.hero-card-inner{width:100%;min-height:100%;padding:2rem;border:2px solid var(--border);background:var(--bg);box-shadow:none;animation:none;transform:none!important}.hero-card-inner::before{content:'CORE STACK // LIVE';display:block;padding-bottom:1rem;margin-bottom:1.3rem;border-bottom:2px solid var(--border);font:700 .65rem 'Segoe UI';letter-spacing:.12em;color:var(--muted)}.card-corner{display:none}.card-photo{width:88px;height:88px;margin:0 0 1rem;border:3px solid var(--cyan);border-radius:0;background:var(--card);box-shadow:5px 5px 0 var(--hard-shadow)}.card-photo img{border-radius:0}.card-name,.card-title{text-align:left}.card-name{font-family:'Segoe UI';font-size:1.55rem}.card-title{font-family:'Segoe UI';font-weight:700}.card-divider{background:var(--border);height:2px}.card-info{font-size:.76rem}.card-bar-track{height:6px;background:var(--border)}.card-bar-fill{background:var(--cyan);animation:none}
+section{max-width:1240px;padding:6rem 2.5rem;border:0}section:not(.hero){border-left:1px solid var(--border);border-right:1px solid var(--border)}.section-tag{font:700 .65rem 'Segoe UI';color:var(--cyan);letter-spacing:.14em}.section-tag::before{content:'['}.section-tag::after{content:']'}.section-title{font-family:'Segoe UI';font-size:clamp(2.7rem,5vw,4.8rem);font-weight:700;color:var(--white);letter-spacing:0;border-bottom:4px solid var(--border);padding-bottom:1.2rem;margin-bottom:2.5rem}.section-title span{color:var(--cyan)}.section-title::after{display:none}
+.about-grid{grid-template-columns:2fr 1fr;gap:0;border:4px solid var(--border);box-shadow:12px 12px 0 var(--hard-shadow)}.about-text{padding:2.5rem;border-right:4px solid var(--border)}.about-para{font-size:1rem;color:var(--text)}.about-stats-col{gap:0}.ast-card{flex:1;background:var(--panel-soft);border:0;border-bottom:2px solid var(--border);box-shadow:none}.ast-card::before{width:7px;background:var(--cyan)}.ast-card:hover{transform:none;background:var(--card)}.ast-num{font-family:'Segoe UI';text-shadow:none}
+.skills-grid{grid-template-columns:repeat(3,1fr);gap:0;border:4px solid var(--border);box-shadow:12px 12px 0 var(--hard-shadow)}.skill-card{min-height:220px;padding:1.6rem;background:var(--card);border:0;border-right:2px solid var(--border);border-bottom:2px solid var(--border);box-shadow:none}.skill-card::before{height:7px;background:var(--cyan)}.skill-card:hover{transform:none;background:var(--panel-soft);box-shadow:none}.skill-icon{font-size:1.5rem;filter:grayscale(1)}.skill-name{font-family:'Segoe UI';font-size:1.2rem}.skill-tag,.at{font-family:'Segoe UI';font-weight:700;background:var(--panel-soft);border:1px solid var(--border);color:var(--cyan)}
+.exp-timeline{padding:0;border:4px solid var(--border);box-shadow:12px 12px 0 var(--hard-shadow)}.exp-timeline::before{display:none}.exp-item{margin:0;padding:2.25rem;border-bottom:4px solid var(--border);display:grid;grid-template-columns:180px 1fr}.exp-item::before{display:none}.exp-period{font-family:'Segoe UI';font-weight:700}.exp-role{font-family:'Segoe UI';font-size:1.65rem}.exp-company{grid-column:2}.exp-card{grid-column:2;background:var(--panel-soft);border:2px solid var(--border);box-shadow:none}.exp-points li{color:var(--text)}
+.certs-grid,.edu-grid{gap:0;border:4px solid var(--border);box-shadow:12px 12px 0 var(--hard-shadow)}.certs-grid{grid-template-columns:repeat(3,1fr)}.cert-card,.edu-card{background:var(--card);border:0;border-right:2px solid var(--border);border-bottom:2px solid var(--border);box-shadow:none}.cert-card:hover,.edu-card:hover{transform:none;background:var(--panel-soft);box-shadow:none}.cert-emoji{filter:grayscale(1)}.cert-name,.edu-degree{font-family:'Segoe UI'}.edu-grid{grid-template-columns:repeat(4,1fr)}.edu-year{color:var(--cyan)}
+.exp-letter-card{border:4px solid var(--border);background:var(--card);box-shadow:12px 12px 0 var(--hard-shadow)}.gallery-grid{grid-template-columns:repeat(3,1fr);gap:0;border:4px solid var(--border);box-shadow:12px 12px 0 var(--hard-shadow)}.gal-item{border:0;border-right:2px solid var(--border);border-bottom:2px solid var(--border)}.gal-item img{filter:grayscale(.35) contrast(1.05)}.gal-overlay{opacity:1;background:linear-gradient(0deg,rgba(2,7,11,.95),transparent 68%)}
+.contact-grid{gap:0;border:4px solid var(--border);box-shadow:12px 12px 0 var(--hard-shadow)}.contact-grid>div{padding:2rem}.contact-grid>div:first-child{border-right:4px solid var(--border)}.contact-item,.personal-item,.lang-pill{background:var(--panel-soft);border:2px solid var(--border);box-shadow:none}.contact-item:hover{transform:none;background:var(--card)}footer{border-top:4px solid var(--border);background:var(--panel-soft)}
+@media(max-width:1040px){.nav-badge{display:none}.nav-links a{padding:0 .5rem}.hero-inner>div:first-child{padding:2.5rem}.hero-card{padding:2rem}.skills-grid,.certs-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){nav{height:64px;padding:0 1rem}.nav-links{background:var(--bg);border-bottom:4px solid var(--border)}.hamburger span{background:var(--cyan)}.theme-toggle{margin-left:auto;margin-right:.75rem}.hero{padding:6.5rem 1rem 3rem}.hero-inner{grid-template-columns:1fr;box-shadow:8px 8px 0 var(--hard-shadow)}.hero-inner>div:first-child{padding:2rem 1.25rem;border-right:0;border-bottom:4px solid var(--border)}.hero-name{font-size:clamp(3.2rem,16vw,4.6rem)}.hero-desc{font-size:.94rem}.hero-stats{width:100%}.stat{padding:.75rem}.hero-card{padding:1.25rem}.hero-card-inner{max-width:none}.about-grid,.contact-grid{grid-template-columns:1fr}.about-text,.contact-grid>div:first-child{border-right:0;border-bottom:4px solid var(--border)}.skills-grid,.certs-grid,.edu-grid,.gallery-grid{grid-template-columns:1fr}.exp-item{grid-template-columns:1fr;padding:1.35rem}.exp-company,.exp-card{grid-column:1}.section-title{font-size:2.6rem}.section-title,.section-tag{word-break:normal}section{padding:4rem 1rem}.about-stats-col{display:flex;flex-direction:column}.contact-grid>div{padding:1.25rem}}
+</style>
+<script>
+(function(){
+  function setupTheme(){
+    const nav=document.querySelector('nav'); if(!nav||document.getElementById('themeToggle')) return;
+    const b=document.createElement('button'); b.id='themeToggle'; b.className='theme-toggle'; b.type='button'; b.setAttribute('aria-label','Switch color theme');
+    const apply=(light)=>{document.body.classList.toggle('light-mode',light);b.textContent=light?'☾':'☼';localStorage.setItem('portfolio_theme',light?'light':'dark')};
+    apply(localStorage.getItem('portfolio_theme')==='light'); b.onclick=()=>apply(!document.body.classList.contains('light-mode'));
+    const badge=nav.querySelector('.nav-badge'); nav.insertBefore(b,badge||null);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setupTheme); else setupTheme();
+})();
+</script>
+
+
+<style id="mobile-overflow-fix">
+@media(max-width:768px){.hero-inner{min-width:0}.hero-inner>div:first-child,.hero-card{min-width:0;width:auto}.hero-name{font-size:clamp(2.8rem,14.5vw,4rem);overflow-wrap:anywhere}.hero-name span{font-size:clamp(2.55rem,13vw,3.7rem)}.hero-desc{overflow-wrap:anywhere}.hero-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat-num{font-size:1.65rem}.stat-label{font-size:.5rem}.btn-primary,.btn-outline{padding:.8rem 1rem}}
+</style>
+
+<style id="hero-final-fix">
+.hero-name{font-size:4.4rem;line-height:.9;white-space:nowrap}.hero-name span{display:inline;font-size:inherit}.card-photo{width:152px;height:152px;margin:0 auto 1.5rem}.card-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}.card-name,.card-title{text-align:center}.hero-card-inner{display:flex;flex-direction:column;justify-content:center}
+@media(max-width:1040px){.hero-name{font-size:3.5rem}}
+@media(max-width:768px){.hero-name{font-size:clamp(1.75rem,9vw,3.15rem);overflow-wrap:normal}.hero-name span{font-size:inherit}.card-photo{width:140px;height:140px}}
+@media(max-width:400px){.hero-inner{box-shadow:4px 4px 0 var(--hard-shadow)}.hero{padding-left:.75rem;padding-right:.75rem}}
 </style>
 </head>
 <body>
@@ -1589,7 +1657,7 @@ window.addEventListener('scroll', () => {
       <span id="lockTimer">Please wait...</span>
     </div>
     <div style="text-align:center;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border)">
-      <button onclick="openSetupScreen()" style="background:transparent;border:none;color:var(--muted);font-family:'Share Tech Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color 0.2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">⚙ First time? Set your credentials</button>
+      <button onclick="openSetupScreen()" style="background:transparent;border:none;color:var(--muted);font-family:Consolas,monospace;font-size:0.65rem;letter-spacing:0.1em;cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color 0.2s" onmouseover="this.style.color='var(--cyan)'" onmouseout="this.style.color='var(--muted)'">⚙ First time? Set your credentials</button>
     </div>
   </div>
 </div>
@@ -1621,7 +1689,7 @@ window.addEventListener('scroll', () => {
     </div>
     <button class="login-btn" onclick="saveSetupCredentials()">✅ SAVE CREDENTIALS</button>
     <div class="login-error" id="setupError"></div>
-    <button onclick="closeSetupScreen()" style="width:100%;margin-top:0.7rem;background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.6rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:0.1em;font-size:0.85rem;transition:all 0.2s" onmouseover="this.style.borderColor='var(--muted)'" onmouseout="">CANCEL</button>
+    <button onclick="closeSetupScreen()" style="width:100%;margin-top:0.7rem;background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.6rem;cursor:pointer;font-family:'Segoe UI',sans-serif;font-weight:600;letter-spacing:0.1em;font-size:0.85rem;transition:all 0.2s" onmouseover="this.style.borderColor='var(--muted)'" onmouseout="">CANCEL</button>
   </div>
 </div>
 
@@ -1655,9 +1723,9 @@ window.addEventListener('scroll', () => {
     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.3rem">
       <h2>// PORTFOLIO ADMIN PANEL</h2>
       <div style="display:flex;gap:0.5rem;align-items:center">
-        <span id="sessionTimer" style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:var(--muted)"></span>
-        <button onclick="openChangePw()" style="background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.3rem 0.8rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:0.7rem;letter-spacing:0.08em;transition:all 0.2s;" onmouseover="this.style.color='var(--cyan)';this.style.borderColor='var(--cyan)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">🔑 CHANGE PW</button>
-        <button onclick="logoutAdmin()" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.3);color:#ff6b6b;padding:0.3rem 0.8rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.08em;transition:all 0.2s;">⏻ LOGOUT</button>
+        <span id="sessionTimer" style="font-family:Consolas,monospace;font-size:0.65rem;color:var(--muted)"></span>
+        <button onclick="openChangePw()" style="background:transparent;border:1px solid var(--border);color:var(--muted);padding:0.3rem 0.8rem;cursor:pointer;font-family:'Segoe UI',sans-serif;font-weight:600;font-size:0.7rem;letter-spacing:0.08em;transition:all 0.2s;" onmouseover="this.style.color='var(--cyan)';this.style.borderColor='var(--cyan)'" onmouseout="this.style.color='var(--muted)';this.style.borderColor='var(--border)'">🔑 CHANGE PW</button>
+        <button onclick="logoutAdmin()" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.3);color:#ff6b6b;padding:0.3rem 0.8rem;cursor:pointer;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.08em;transition:all 0.2s;">⏻ LOGOUT</button>
         <button class="admin-close" onclick="closeAdmin()">✕ CLOSE</button>
       </div>
     </div>
@@ -1819,8 +1887,8 @@ window.addEventListener('scroll', () => {
       </div>
 
       <div style="background:rgba(0,0,0,0.3);border:1px solid var(--border);padding:1.2rem;border-radius:2px;margin-bottom:1.5rem">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:var(--cyan);margin-bottom:1rem;letter-spacing:0.1em">SESSION INFO</div>
-        <div style="font-size:0.8rem;color:var(--muted);line-height:2;font-family:'Share Tech Mono',monospace">
+        <div style="font-family:Consolas,monospace;font-size:0.7rem;color:var(--cyan);margin-bottom:1rem;letter-spacing:0.1em">SESSION INFO</div>
+        <div style="font-size:0.8rem;color:var(--muted);line-height:2;font-family:Consolas,monospace">
           Logged in as: <span style="color:var(--white)" id="sec-username">—</span><br>
           Login time: <span style="color:var(--white)" id="sec-logintime">—</span><br>
           Session expires: <span style="color:var(--cyan)" id="sec-expiry">—</span><br>
@@ -1829,11 +1897,11 @@ window.addEventListener('scroll', () => {
       </div>
 
       <div style="background:rgba(255,107,53,0.05);border:1px solid rgba(255,107,53,0.2);padding:1.2rem;border-radius:2px;margin-bottom:1.5rem">
-        <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:var(--orange);margin-bottom:0.8rem;letter-spacing:0.1em">⚠ DANGER ZONE</div>
+        <div style="font-family:Consolas,monospace;font-size:0.7rem;color:var(--orange);margin-bottom:0.8rem;letter-spacing:0.1em">⚠ DANGER ZONE</div>
         <div style="display:flex;gap:0.7rem;flex-wrap:wrap;margin-bottom:0.5rem">
-          <button onclick="exportData()" style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);color:var(--cyan);padding:0.6rem 1.4rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">📥 EXPORT DATA</button>
-          <button onclick="importData()" style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);color:var(--cyan);padding:0.6rem 1.4rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">📤 IMPORT DATA</button>
-          <button onclick="resetAllData()" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.3);color:#ff6b6b;padding:0.6rem 1.4rem;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">🗑 RESET ALL DATA</button>
+          <button onclick="exportData()" style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);color:var(--cyan);padding:0.6rem 1.4rem;cursor:pointer;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">📥 EXPORT DATA</button>
+          <button onclick="importData()" style="background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.3);color:var(--cyan);padding:0.6rem 1.4rem;cursor:pointer;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">📤 IMPORT DATA</button>
+          <button onclick="resetAllData()" style="background:rgba(255,60,60,0.1);border:1px solid rgba(255,60,60,0.3);color:#ff6b6b;padding:0.6rem 1.4rem;cursor:pointer;font-family:'Segoe UI',sans-serif;font-weight:700;font-size:0.85rem;letter-spacing:0.1em;border-radius:2px">🗑 RESET ALL DATA</button>
         </div>
         <div class="admin-note">// Export saves all your data as a file. Import restores it on any device.</div>
         <input type="file" id="importFileInput" accept=".json" style="display:none" onchange="handleImport(event)">
